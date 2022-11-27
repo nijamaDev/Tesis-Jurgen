@@ -1,0 +1,240 @@
+\ProvidesFile{ap-bugs}[2022-07-11 bugs appendix]
+
+\makeatletter
+\newcommand{\MyBug}[2]
+  {%
+    \vspace*{6pt}
+    \noindent
+    {%
+      \bfseries
+      \ifthen{\equal{high}{#2}}{\color{red}}%
+      \ifthen{\equal{low}{#2}}{\color{green}}%
+      \ifthen{\equal{wait}{#2}}{\color{blue}}%
+      \ifthen{\equal{done}{#2}}{\color{black}}%
+      {\fontsize{9}{10}\reset@font\bf BUG}
+      #1.
+    }%
+    \ignorespaces
+  }
+\makeatother
+
+\chapter{BUGS}
+
+This appendix lists all bugs/comments/issues/etc\@.
+under the generic label `bug'.
+
+Each bug
+is assigned the next number
+when it is added to this list.
+I started keeping track of bugs
+in this fashion
+on February 26, 2022,
+and some previously known bugs are included in this list.
+A color indicates a bug's priority:
+
+\begin{inlinetable}
+  \newcommand{\Color}[1]{\color{#1}#1}
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    \textbf{Priority}& \textbf{Color}\\
+    \midrule
+    high&    \Color{red}\\
+    low&     \Color{green}\\
+    waiting& \Color{blue}\\
+    done&    \Color{black}\\
+    \bottomrule
+  \end{tabular}
+\end{inlinetable}
+
+See the
+|ap-bugs.tex|
+file for the \LaTeXLogo\ input for this appendix.
+
+
+\section{These bugs need to be looked at}
+
+% I need to fix the following things in \PurdueThesis.
+% They are listed in bug number order.
+
+\MyBug{1}{high}
+Table of Contents is double-spaced instead of 1\sfrac12 spacing.
+Tighten up section and less significant heading spacing?\\
+Reported by Anita Adams Sale on 2021-03-17.
+
+\MyBug{2}{high}
+List of Figures indented \(\approx\sfrac14\) inch
+more than List of Tables.\\
+Reported by Anita Adams Sale on 2021-03-17.\\
+Use |pdflatex| instead of |lualatex| to fix this.
+Tested ok on 2022-05-06.\\
+Tested bad on 2022-05-18.
+
+\MyBug{6}{high}
+APA reference style indents references too far.\\
+Reported by Mark Senn on 2021-04-08.
+
+\MyBug{8}{low}
+Use ``Last Accessed: yyyy-mm-dd.'' urldate in bibliography.\\
+Reported by Mark Senn on 2021-04-19.
+
+\MyBug{9}{low}
+Check that |@{}| is before the left column
+and after the right column in all tables.\\
+Reported by Mark Senn on 2021-04-19.
+
+\MyBug{11}{low}
+Bibliography change:
+Change,
+for example,
+``Acoustical Science and Technology, vol.~23, no.~1''
+to
+``Acoustical Science and Technology {\textbf{23}} ({\textbf{1})''.\\
+Reported by Daniel Joesph Carr on 2021-06-16.
+
+\MyBug{12}{low}
+Bibliography change:
+Change,
+for example,
+|M.~Abramowitz and I.A.~Stegun, Eds.,|
+to
+|M.~Abramowitz and I.A.~Stegun, editors,|.\\
+Reported by Daniel Joesph Carr on 2021-06-16.
+
+\MyBug{13}{low}
+Headings containing a SmallCaps font do not work.\\
+Reported by Javad (Nima) Darivandpour on 2021-06-29.
+See \ref{se:section-heading-with-smallcaps}.
+
+\MyBug{14}{low}
+On Overleaf only,
+when using
+|\def\ZZshowtimestamp{true}|,
+the time and sometimes the date
+are wrong at the top of the page.\\
+Reported by Mark Senn on 2022-02-25.\\
+This might be due to using
+|\ExplSyntaxOn| \ldots |\ExplSyntaxOff|
+and having |:| and/or other characters having the wrong catcode.
+
+\MyBug{15}{low}
+Reference indentation is ok if a person has 10--99 references.
+Figure out how to adjusting margin for 1--9 or over 99 references.\\
+Reported by Mark Senn on unknown date.
+
+\MyBug{16}{high}
+Add DTECH degree.\\
+Reported by Mark Senn on unknown date.
+
+\MyBug{19}{high}
+|Bibliography| and |References| missing from navigation panel.\\
+Reported by Mark Senn on 2022-02-28.
+
+\MyBug{20}{high}
+|Bibliography| and |References| should be in all caps.\\
+Reported by Mark Senn on 2022-02-28.
+
+\MyBug{21}{low}
+IE students should be able
+to specify IEEE
+or APA bibliography format.\\
+Reported by Patrick Brunese on 2022-03-04.
+
+\MyBug{22}{high}
+Table and figure captions
+should be able to be justified automatically
+to the width of the table or figure.
+See
+\begin{itemize}
+\item
+\href{https://latex-tutorial.com/caption-customization-latex}%
+{Full guide to captions customization in \LaTeXLogo}
+\item
+\href{https://tex.stackexchange.com/questions/16582/center-figure-that-is-wider-than-textwidth/16584\#16584}%
+{Center figure that is wider than {\tt \char92 textwidth}}
+\item
+\href{https://tex.stackexchange.com/questions/98971/over-wide-figure-with-caption-of-the-same-width-that-both-spill-out-of-the-right}%
+{Over wide figure with caption of the same width that both spill out of the right margin and are aligned flush left}
+\end{itemize}
+for information on how to do this.
+Reported by Daniel Carr on 2021-07-29.
+
+\MyBug{23}{low}
+The following example lines are used to specify information:
+\begin{quote}
+|\def\ZZinstitution{Purdue University}|\\
+|\def\ZZcampus{West\space Lafayette}|\\
+|\def\ZZprogram{Electrical and Computer Engineering}|\\
+|\def\ZZdegree{Doctor of Philosophy}|\\
+|\def\ZZdocument{A Dissertation}|\\
+|\def\ZZgraduation{May 2022}|\\
+\end{quote}
+\vspace*{-16pt}
+Make them uniform so \Keys{space}
+or |\space| are used everywhere.
+Reported by Mark Senn on 2022-05-18.
+
+\MyBug{24}{high}
+Convert the ametsocV6 \BibTeXLogo\ format
+to \BibLaTeXLogo\ for Earth and Planetary Sciences
+since \PurdueThesisLogo\ no longer supports \BibTeXLogo.
+Reported by Mark Senn on 2022-05-18.
+
+
+\section{These bugs are waiting on a reply from someone other than Mark Senn}
+
+\MyBug{10}{wait}
+Using
+|linktoc = section|
+does not work with captions with
+|\frac|.\\
+Reported by Mark Senn on 2021-05-27.
+In the short-term,
+check with Ashlee Messersmith
+if {\tt linktoc = page} can be used.
+If that's ok make the change
+and look into changing captions from my code
+to \LaTeXLogo's code.
+Waiting on Ashlee Messersmith.
+
+
+\section{These bugs have been rejected or fixed}
+
+\MyBug{3}{done}
+Use ``Last Accessed: dd/mm/yy.'' urldate in bibliography.\\
+Reported by Priyank Kalgaonkar on 2021-04-06.\\
+Answered by Mark Senn on 2022-02-27.\\
+The United States uses mm/dd/yy and other countries use dd/mm/yy
+\cite{cms17-ambiguous-dates}.
+I recommend using what your bibliography style defines
+or the unambiguous ISO 8601 standard yyyy-mm-dd
+\cite{cms17-iso-dates}.
+
+\MyBug{4}{done}
+Change citation, e.g., |[6], [71]| to |[6,71]|.\\
+Reported by Mark Senn on 2021-04-07.
+Fixed on 2022-04-14.
+Tested ok on 2022-04-14.
+
+\MyBug{5}{done}
+Change citation, e.g., |[6], [7], [8]| to |[6-8]|.\\
+Reported by Mark Senn on 2021-04-07.
+Fixed on 2022-04-14.
+Tested ok on 2022-04-14.
+
+\MyBug{7}{fixed}
+Non-nested description environments have bold items.
+Nested description environments have non-bold items.
+How come?
+Are the indentations correct?\\
+Reported by Mark Senn on 2021-04-09.
+Tested ok on 2021-05-31.
+
+\MyBug{17}{fixed}
+Allow |,| (comma) in |\title|.\\
+Reported by Mark Senn on unknown date.
+Tested ok on 2021-11-30.
+
+\MyBug{18}{fixed}
+Allow |\\| in |\title|.\\
+Reported by Mark Senn on unknown date.
+Tested ok on 2021-11-30.

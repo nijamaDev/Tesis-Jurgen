@@ -76,11 +76,11 @@
 \usepackage[nottoc]{tocbibind}
 %%% remove toc numbering
 \makeatletter
-\let\latexl@section\l@section
+\let\latexl@section\l@section{}
 \def\l@section#1#2{\begingroup\let\numberline\@gobble\latexl@section{#1}{#2}\endgroup}
-\let\latexl@subsection\l@subsection
+\let\latexl@subsection\l@subsection{}
 \def\l@subsection#1#2{\begingroup\let\numberline\@gobble\latexl@subsection{#1}{#2}\endgroup}
-\let\latexl@subsubsection\l@subsubsection
+\let\latexl@subsubsection\l@subsubsection{}
 \def\l@subsubsection#1#2{\begingroup\let\numberline\@gobble\latexl@subsubsection{#1}{#2}\endgroup}
 \makeatother
 %% set figure path
@@ -102,7 +102,7 @@
 \fontsize{12}{1} \selectfont
 %% set line spacing
 \usepackage{setspace}
-\singlespacing
+\singlespacing{}
 %% set par indent
 %\usepackage{indentfirst}
 \setlength{\parindent}{6.5ex}
@@ -146,7 +146,7 @@
 \renewenvironment{quote}{%
    \list{}{%
      \leftmargin0cm   % this is the adjusting screw
-     \rightmargin\leftmargin
+     \rightmargin\leftmargin{}
    }
    \item\relax
 }
@@ -157,12 +157,12 @@
 
 \usepackage{xparse}
 
-\ExplSyntaxOn
+\ExplSyntaxOn{}
 \NewDocumentCommand{\capitalize}{>{\SplitList{~}}m}
  {
   \seq_clear:N \l_capitalize_words_seq
   \ProcessList{#1}{\CapitalizeFirst}
-  \seq_use:Nn \l_capitalize_words_seq { ~ }
+  \seq_use:Nn \l_capitalize_words_seq {~}
  }
 \NewDocumentCommand{\CapitalizeFirst}{m}
  {
@@ -197,7 +197,7 @@
 \cs_generate_variant:Nn \seq_if_in:NnTF { Nf }
 \seq_new:N \l_capitalize_words_seq
 \seq_new:N \g_capitalize_exceptions_seq
-\ExplSyntaxOff
+\ExplSyntaxOff{}
 
 \AppendToList{a,is,of,óf}
 %%%%%% capitalize from stackexchange %%%%%% 
@@ -213,15 +213,15 @@
 %% roman for frontmatter
 \pagenumbering{roman}
 \thispagestyle{empty}
-\longvertspacing
+\longvertspacing{}
 \begin{tightcenter}
   por
 \end{tightcenter}
-\mylinespacing
+\mylinespacing{}
 \begin{tightcenter}
-  \myname
+  \myname{}
 \end{tightcenter}
-\longvertspacing
+\longvertspacing{}
 \begin{tightcenter}
   A thesis submitted in partial fulfillment \\
   of the requirements for the \degreetype\\
@@ -229,25 +229,25 @@
   Graduate College of \\
   The University of Iowa
 \end{tightcenter}
-\mylinespacing
+\mylinespacing{}
 \begin{tightcenter}
-  \mymonth~\myyear
+  \mymonth~\myyear{}
 \end{tightcenter}
-\mylinespacing
+\mylinespacing{}
 \begin{tightcenter}
-  Thesis Committee: Name of Thesis Supervisor, \myadvisor
-\end{tightcenter}
-\begin{tightcenter}
-  \committeememberA
+  Thesis Committee: Name of Thesis Supervisor, \myadvisor{}
 \end{tightcenter}
 \begin{tightcenter}
-  \committeememberB
+  \committeememberA{}
 \end{tightcenter}
 \begin{tightcenter}
-  \committeememberC
+  \committeememberB{}
 \end{tightcenter}
 \begin{tightcenter}
-  \committeememberD
+  \committeememberC{}
+\end{tightcenter}
+\begin{tightcenter}
+  \committeememberD{}
 \end{tightcenter}
 %% copyright page %%
 
