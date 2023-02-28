@@ -9,10 +9,11 @@
 \newcommand{\longvertspacing}{~\\~\\~\\~\\~\\~\\}
 \newcommand{\mylinespacing}{\vspace{1em}}
 \newcommand{\myoptpg}{\textbf{THIS PAGE IS OPTIONAL}}
-\newcommand{\mytitle}{Integración De Recursos Computacionales Heterogéneos En El Departamento De Matemáticas De La Universidad Del Valle}
+\newcommand{\mytitle}{Integración De Recursos Computacionales Heterogéneos En
+  El Departamento De Matemáticas De La Universidad Del Valle}
 \newcommand{\myname}{Nicolas Jaramillo Mayor}
 
-\newcommand{\degreetype}{\capitalize{my degree}} 
+\newcommand{\degreetype}{\capitalize{my degree}}
 \newcommand{\mydegree}{\capitalize{my degree name}}
 \newcommand{\myprogram}{\capitalize{my program name}}
 %%%% choose: May, August, December  %%%%
@@ -26,13 +27,13 @@
 %%%%%% start: define some names here %%%%%%
 
 \usepackage{geometry}
- \geometry{
- letterpaper,
- left=2.54cm,
- right=2.54cm,
- bottom=2.54cm,
- top=2.54cm,
- }
+\geometry{
+  letterpaper,
+  left=2.54cm,
+  right=2.54cm,
+  bottom=2.54cm,
+  top=2.54cm,
+}
 \usepackage[utf8]{inputenc}
 
 %% ref related
@@ -46,7 +47,7 @@
 \renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
 %%% adjust sectional unit title fonts in toc
-\renewcommand{\cftsecfont}{\normalfont\MakeUppercase} 
+\renewcommand{\cftsecfont}{\normalfont\MakeUppercase}
 \renewcommand{\cftsubsecfont}{\normalfont}
 \renewcommand{\cftsubsubsecfont}{\normalfont}
 \renewcommand{\cftsecpagefont}{\normalfont}
@@ -92,7 +93,8 @@
 %% captions
 \usepackage{boxhandler}
 \usepackage{caption}
-\captionsetup{labelsep=period, justification=raggedright, singlelinecheck=false}
+\captionsetup{labelsep=period, justification=raggedright,
+  singlelinecheck=false}
 %% appendix
 \usepackage{appendix}
 %% biblatex
@@ -113,28 +115,28 @@
 \usepackage[indentafter]{titlesec}
 %%%% heading 1
 \titleformat{\section}
-  {\normalsize\center}
-  {}
-  {0pt}
-  {\MakeUppercase}
+{\normalsize\center}
+{}
+{0pt}
+{\MakeUppercase}
 %%%% heading 2
 \titleformat{\subsection}
-  {\normalsize\bf}
-  {}
-  {0pt}
-  {\capitalize}
+{\normalsize\bf}
+{}
+{0pt}
+{\capitalize}
 %%%% heading 3
 \titleformat{\subsubsection}
-  {\normalsize\bf}
-  {}
-  {0pt}
-  {\capitalize}
+{\normalsize\bf}
+{}
+{0pt}
+{\capitalize}
 %%%% heading 4
 \titleformat{\paragraph}
-  {\normalsize\bf\itshape}
-  {}
-  {0pt}
-  {\capitalize}
+{\normalsize\bf\itshape}
+{}
+{0pt}
+{\capitalize}
 %\titleformat{⟨command⟩}[⟨shape⟩]{⟨format⟩}{⟨label⟩}{⟨sep⟩}{⟨before-code⟩}[⟨after-code⟩]
 
 %% a new center environment
@@ -142,16 +144,16 @@
   \setlength\topsep{0pt}
   \setlength\parskip{0pt}
   \begin{center}
-}{%
+    }{%
   \end{center}
 }
 %% adjust quotation environment margin
 \renewenvironment{quote}{%
-   \list{}{%
-     \leftmargin0cm   % this is the adjusting screw
-     \rightmargin\leftmargin{}
-   }
-   \item\relax
+  \list{}{%
+    \leftmargin0cm   % this is the adjusting screw
+    \rightmargin\leftmargin{}
+  }
+  \item\relax
 }
 {\endlist}
 
@@ -162,41 +164,43 @@
 
 \ExplSyntaxOn{}
 \NewDocumentCommand{\capitalize}{>{\SplitList{~}}m}
- {
+{
   \seq_clear:N \l_capitalize_words_seq
   \ProcessList{#1}{\CapitalizeFirst}
   \seq_use:Nn \l_capitalize_words_seq {~}
- }
+}
 \NewDocumentCommand{\CapitalizeFirst}{m}
- {
+{
   \capitalize_word:n { #1 }
- }
+}
 
 \sys_if_engine_pdftex:TF
- {
+{
   \cs_set_eq:Nc \capitalize_tl_set:Nn { protected@edef }
- }
- {
+}
+{
   \cs_set_eq:NN \capitalize_tl_set:Nn \tl_set:Nn
- }
+}
 
 \cs_new_protected:Nn \capitalize_word:n
- {
+{
   \capitalize_tl_set:Nn \l_capitalize_word_tl { #1 }
   \seq_if_in:NfTF \g_capitalize_exceptions_seq { \tl_to_str:n { #1 } }
-   % exception word
-   { \seq_put_right:Nn \l_capitalize_words_seq { #1 } } % exception word
-   % to be uppercased
-   { \seq_put_right:Nx \l_capitalize_words_seq { \tl_mixed_case:V \l_capitalize_word_tl } }
- }
+  % exception word
+  { \seq_put_right:Nn \l_capitalize_words_seq { #1 } }
+  % exception word
+  % to be uppercased
+  { \seq_put_right:Nx \l_capitalize_words_seq { \tl_mixed_case:V
+      \l_capitalize_word_tl } }
+}
 \cs_generate_variant:Nn \tl_mixed_case:n { V }
 \NewDocumentCommand{\AppendToList}{m}
- {
+{
   \clist_map_inline:nn { #1 }
-   {
+  {
     \seq_gput_right:Nx \g_capitalize_exceptions_seq { \tl_to_str:n { ##1 } }
-   }
- }
+  }
+}
 \cs_generate_variant:Nn \seq_if_in:NnTF { Nf }
 \seq_new:N \l_capitalize_words_seq
 \seq_new:N \g_capitalize_exceptions_seq
@@ -273,7 +277,6 @@
 \include{5_marco}
 \include{6_met}
 
-
 \begin{doublespace}
   %% main contents %%
   \include{9_chap_1}
@@ -293,8 +296,6 @@
   %\include{9_chap_b}
   %% appendix %%
 
-
 \end{doublespace}
-
 
 \end{document}
