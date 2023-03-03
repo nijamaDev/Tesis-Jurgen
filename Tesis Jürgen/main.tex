@@ -4,28 +4,24 @@
 \usepackage{amstext}
 \usepackage{blindtext}
 \usepackage{multicol}
-
-%%%%%% start: define some names here %%%%%%
-\newcommand{\longvertspacing}{~\\~\\~\\~\\~\\~\\}
-\newcommand{\mylinespacing}{\vspace{1em}}
-\newcommand{\myoptpg}{\textbf{THIS PAGE IS OPTIONAL}}
-\newcommand{\mytitle}{Integración De Recursos Computacionales Heterogéneos En
-  El Departamento De Matemáticas De La Universidad Del Valle}
-\newcommand{\myname}{Nicolas Jaramillo Mayor}
-
-\newcommand{\degreetype}{\capitalize{my degree}}
-\newcommand{\mydegree}{\capitalize{my degree name}}
-\newcommand{\myprogram}{\capitalize{my program name}}
-%%%% choose: May, August, December  %%%%
-\newcommand{\mymonth}{Month}
-\newcommand{\myyear}{2023}
-\newcommand{\myadvisor}{Thesis Supervisor}
-\newcommand{\committeememberA}{Committee Member Name}
-\newcommand{\committeememberB}{Committee Member Name}
-\newcommand{\committeememberC}{Committee Member Name}
-\newcommand{\committeememberD}{Committee Member Name}
-%%%%%% start: define some names here %%%%%%
-
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{varioref}
+\usepackage[linktocpage=true]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+\usepackage[nottoc]{tocbibind}
+\usepackage{graphicx}
+\usepackage{boxhandler}
+\usepackage{caption}
+\usepackage{appendix}
+\usepackage{mathptmx}
+\usepackage{setspace}
+\usepackage{ifxetex}
+\usepackage{xparse}
+\usepackage[indentafter]{titlesec}
+\usepackage[style=apa,language=american,maxnames=4,minnames=3,sortcites=true]{biblatex}
 \usepackage{geometry}
 \geometry{
   letterpaper,
@@ -34,41 +30,37 @@
   bottom=2.54cm,
   top=2.54cm,
 }
-\usepackage[utf8]{inputenc}
 
-%% ref related
-\usepackage{varioref}
-\usepackage[linktocpage=true]{hyperref}
-\usepackage[capitalise,noabbrev]{cleveref}
-%% toc
-\usepackage{tocloft}
-%%% dots: https://tex.stackexchange.com/questions/53898/how-to-get-lines-with-dots-in-the-table-of-contents-for-sections
+%%%%%% start: define some names here %%%%%%
+\newcommand{\longvertspacing}{~\\~\\~\\~\\~\\~\\}
+\newcommand{\mylinespacing}{\vspace{1em}}
+\newcommand{\myoptpg}{\textbf{THIS PAGE IS OPTIONAL}}
+\newcommand{\mytitle}{Optimización de Bajo Costo Adaptable para Recursos Computacionales Mediante Computación Distribuida}
+\newcommand{\myname}{Nicolas Jaramillo Mayor}
+\newcommand{\degreetype}{\capitalize{my degree}}
+\newcommand{\mydegree}{\capitalize{my degree name}}
+\newcommand{\myprogram}{\capitalize{my program name}}
+%%%% choose: May, August, December  %%%%
+\newcommand{\mymonth}{Marzo}
+\newcommand{\myyear}{2023}
+\newcommand{\myadvisor}{John Sanabria}
+\newcommand{\committeememberA}{León Escobar}
+%%%% Commands %%%%
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
-%%% adjust sectional unit title fonts in toc
 \renewcommand{\cftsecfont}{\normalfont\MakeUppercase}
 \renewcommand{\cftsubsecfont}{\normalfont}
 \renewcommand{\cftsubsubsecfont}{\normalfont}
 \renewcommand{\cftsecpagefont}{\normalfont}
-%%% use figure/table.num for the lot and lof
-%\renewcommand{\cftfigfont}{Figure~\alph{fig}.}
-%% source: https://tex.stackexchange.com/questions/419103/how-to-change-the-numbering-style-in-list-of-table-and-list-of-figures
 \renewcommand{\cfttabpresnum}{Tabla }
 \renewcommand{\cfttabaftersnum}{.\hspace{1ex}}
-%%% increase spacing between entries in toc
 \setlength{\cftparskip}{2ex}
-%%% decrease spacing between number and title as well as indent
-%\setlength{\cftfignumwidth}{10ex}
-%\setlength{\cfttabnumwidth}{8ex}
 \setlength{\cftfignumwidth}{10.5ex}
 \setlength{\cfttabnumwidth}{8ex}
 \setlength{\cftfigindent}{0ex}
 \setlength{\cfttabindent}{0ex}
 \setlength{\columnsep}{1cm}
-%%% title names
-%%% center uppercase toc titles
-%% https://tex.stackexchange.com/a/255699/154200
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\normalsize\MakeUppercase}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
 \renewcommand{\contentsname}{Tabla de Contenido}
@@ -76,9 +68,6 @@
 \renewcommand{\cftafterlottitle}{\hfill}
 \renewcommand{\cftloftitlefont}{\hfill\normalsize\MakeUppercase}
 \renewcommand{\cftafterloftitle}{\hfill}
-%% this package binds all indices to toc
-\usepackage[nottoc]{tocbibind}
-%%% remove toc numbering
 \makeatletter
 \let\latexl@section\l@section{}
 \def\l@section#1#2{\begingroup\let\numberline\@gobble\latexl@section{#1}{#2}\endgroup}
@@ -88,31 +77,19 @@
 \def\l@subsubsection#1#2{\begingroup\let\numberline\@gobble\latexl@subsubsection{#1}{#2}\endgroup}
 \makeatother
 %% set figure path
-\usepackage{graphicx}
 \graphicspath{{figures/}}
 %% captions
-\usepackage{boxhandler}
-\usepackage{caption}
 \captionsetup{labelsep=period, justification=raggedright,
   singlelinecheck=false}
-%% appendix
-\usepackage{appendix}
 %% biblatex
-\usepackage[style=apa,language=american,maxnames=4,minnames=3,sortcites=true]{biblatex}
 \DeclareLanguageMapping{american}{american-apa}
 \addbibresource{ref.bib}
-%% uses times font
-\usepackage{mathptmx}
 %% set fontsize
 \fontsize{12}{1} \selectfont
-%% set line spacing
-\usepackage{setspace}
 \singlespacing{}
-%% set par indent
 %\usepackage{indentfirst}
 \setlength{\parindent}{6.5ex}
-%% customize heading styles
-\usepackage[indentafter]{titlesec}
+
 %%%% heading 1
 \titleformat{\section}
 {\normalsize\center}
@@ -158,10 +135,6 @@
 {\endlist}
 
 %%%%%% capitalize from stackexchange %%%%%% 
-\usepackage{ifxetex}
-
-\usepackage{xparse}
-
 \ExplSyntaxOn{}
 \NewDocumentCommand{\capitalize}{>{\SplitList{~}}m}
 {
@@ -247,15 +220,6 @@
 \begin{tightcenter}
   \committeememberA{}
 \end{tightcenter}
-\begin{tightcenter}
-  \committeememberB{}
-\end{tightcenter}
-\begin{tightcenter}
-  \committeememberC{}
-\end{tightcenter}
-\begin{tightcenter}
-  \committeememberD{}
-\end{tightcenter}
 %% copyright page %%
 
 \include{1_copyright}
@@ -268,33 +232,24 @@
 %% content lists %%
 \include{0_toc}
 %% content lists %%
-
 %% abs page %%
 \include{1_intro}
-\include{2_prob}
-\include{3_just}
-\include{4_obj}
-\include{5_marco}
-\include{6_met}
+\include{2_dise}
+\include{3_pruebas}
+\include{4_discu}
+\include{5_futuro}
+\include{6_refs}
 
 \begin{doublespace}
   %% main contents %%
   \include{9_chap_1}
-  \include{9_chap_2}
-  \include{9_chap_3}
   %% main contents %%
 
   %% ref %%
   \newpage
-  \section{references}
+  \section{referencias}
   \printbibliography[heading=none]
   %% ref %%
-
-  %% appendix %%
-  %\appendix
-  %\include{9_chap_a}
-  %\include{9_chap_b}
-  %% appendix %%
 
 \end{doublespace}
 
