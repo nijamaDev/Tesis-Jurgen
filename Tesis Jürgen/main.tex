@@ -56,12 +56,6 @@
 \renewcommand{\cftsecpagefont}{\normalfont}
 \renewcommand{\cfttabpresnum}{Tabla }
 \renewcommand{\cfttabaftersnum}{.\hspace{1ex}}
-\setlength{\cftparskip}{2ex}
-\setlength{\cftfignumwidth}{10.5ex}
-\setlength{\cfttabnumwidth}{8ex}
-\setlength{\cftfigindent}{0ex}
-\setlength{\cfttabindent}{0ex}
-\setlength{\columnsep}{1cm}
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\normalsize\MakeUppercase}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
 \renewcommand{\contentsname}{Tabla de Contenido}
@@ -69,6 +63,12 @@
 \renewcommand{\cftafterlottitle}{\hfill}
 \renewcommand{\cftloftitlefont}{\hfill\normalsize\MakeUppercase}
 \renewcommand{\cftafterloftitle}{\hfill}
+\setlength{\cftparskip}{2ex}
+\setlength{\cftfignumwidth}{10.5ex}
+\setlength{\cfttabnumwidth}{8ex}
+\setlength{\cftfigindent}{0ex}
+\setlength{\cfttabindent}{0ex}
+\setlength{\columnsep}{1cm}
 \makeatletter
 \let\latexl@section\l@section{}
 \def\l@section#1#2{\begingroup\let\numberline\@gobble\latexl@section{#1}{#2}\endgroup}
@@ -195,11 +195,10 @@
 \pagenumbering{arabic}
 \setcounter{page}{2}
 
+%% abs page %%
 \include{0_abs}
 %% content lists %%
 \include{0_toc}
-%% content lists %%
-%% abs page %%
 \include{1_intro}
 \include{2_dise}
 \include{3_pruebas}
