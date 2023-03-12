@@ -24,6 +24,7 @@
 \usepackage[style=numeric,language=american,maxnames=4,minnames=3,sortcites=true]{biblatex}
 \usepackage{geometry}
 \usepackage{csquotes}
+\usepackage{longtable}
 \usepackage{parskip}
 \geometry{
   letterpaper,
@@ -37,6 +38,7 @@
 \input{0_0_defs}
 
 \begin{document}
+\onehalfspacing
 
 \include{0_1_cover}
 
@@ -47,6 +49,7 @@
 \include{0_2_abstract}
 %% content lists %%
 \include{0_3_toc}
+\include{0_1_Proyectos}
 \include{1_intro}
 \include{2_metodo}
 \include{3_pruebas}
@@ -54,13 +57,10 @@
 \include{5_futuro}
 \include{6_refs}
 
-\begin{doublespace}
   %% ref %%
   \newpage
   \section{referencias}
   \printbibliography[heading=none]
   %% ref %%
-
-\end{doublespace}
 
 \end{document}
