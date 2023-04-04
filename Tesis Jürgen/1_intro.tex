@@ -1,74 +1,72 @@
 \begin{spacing}{1.5}
-\begin{tightcenter}
-\section{1. Introducción}
-\mylinespacing
-\end{tightcenter}
+  \begin{tightcenter}
+    \section{1. Introducción}
+    \mylinespacing
+  \end{tightcenter}
 
-\begin{multicols}{2}
 
-    \subsection{1.1  Introducción}
-    El objetivo de la tesis presentada es maximizar la utilización de los recursos disponibles en el clúster Bochica y la sala de cómputo Jürgen Tischer del departamento de Matemáticas de la Universidad del Valle. A pesar de contar con una cantidad considerable de medios computacionales, estos recursos no están siendo utilizados de manera óptima. Para abordar este problema, se propone una metodología que consiste en la implementación de un gestor de cola de tareas con capacidades de paralelización, lo que permitirá una utilización más eficiente y efectiva de los recursos en investigaciones matemáticas.
+  \subsection{1.1  Introducción}
+  El objetivo de la tesis presentada es maximizar la utilización de los recursos disponibles en el clúster Bochica y la sala de cómputo Jürgen Tischer del departamento de Matemáticas de la Universidad del Valle. A pesar de contar con una cantidad considerable de medios computacionales, estos recursos no están siendo utilizados de manera óptima. Para abordar este problema, se propone una metodología que consiste en la implementación de un gestor de cola de tareas con capacidades de paralelización, lo que permitirá una utilización más eficiente y efectiva de los recursos en investigaciones matemáticas.
 
-    Para alcanzar este objetivo, se propone utilizar sistemas distribuidos como estrategia para aprovechar al máximo los recursos disponibles. Estos sistemas permiten la paralelización de tareas y la distribución de la carga de trabajo entre varios nodos o dispositivos, lo que implica la posibilidad de aprovechar la capacidad total de cómputo de los recursos disponibles. Además, estos sistemas ofrecen una mayor flexibilidad y escalabilidad en el uso de los recursos, lo que resulta esencial en un entorno de investigación matemática donde las necesidades de cómputo pueden variar significativamente.
+  Para alcanzar este objetivo, se propone utilizar sistemas distribuidos como estrategia para aprovechar al máximo los recursos disponibles. Estos sistemas permiten la paralelización de tareas y la distribución de la carga de trabajo entre varios nodos o dispositivos, lo que implica la posibilidad de aprovechar la capacidad total de cómputo de los recursos disponibles. Además, estos sistemas ofrecen una mayor flexibilidad y escalabilidad en el uso de los recursos, lo que resulta esencial en un entorno de investigación matemática donde las necesidades de cómputo pueden variar significativamente.
 
-    Se realizará un análisis de diversos programas informáticos en esta tesis con el fin de proponer una implementación específica de un sistema distribuido que permita un mayor rendimiento y eficiencia en comparación con otros métodos existentes. Además, se evaluará el desempeño del sistema propuesto en relación con otros métodos, para determinar su efectividad en la optimización del uso de los recursos disponibles en el clúster Bochica y la sala de computación Jürgen Tischer.
-    
-    \subsection{1.2 Planeamiento del problema}
+  Se realizará un análisis de diversos programas informáticos en esta tesis con el fin de proponer una implementación específica de un sistema distribuido que permita un mayor rendimiento y eficiencia en comparación con otros métodos existentes. Además, se evaluará el desempeño del sistema propuesto en relación con otros métodos, para determinar su efectividad en la optimización del uso de los recursos disponibles en el clúster Bochica y la sala de computación Jürgen Tischer.
 
-    \textbf{Descripción del problema}
+  \subsection{1.2 Planeamiento del problema}
 
-    La falta de acceso a capacidades computacionales adecuadas está limitando la capacidad de los trabajos de investigación en el campo de las ciencias en la Universidad del Valle para abordar problemas complejos, realizar análisis de datos y simular procesos. Esto se ha reflejado en un enfoque predominantemente teórico en lugar de computacionalmente intenso en estos trabajos de investigación. El Departamento de Matemáticas identifica esta limitación como un problema y ve la necesidad de acceder a recursos computacionales más potentes para poder llevar a cabo cálculos matemáticos a gran escala con fines investigativos.
+  \textbf{Descripción del problema}
 
-    \textbf{Formulación del problema}
+  La falta de acceso a capacidades computacionales adecuadas está limitando la capacidad de los trabajos de investigación en el campo de las ciencias en la Universidad del Valle para abordar problemas complejos, realizar análisis de datos y simular procesos. Esto se ha reflejado en un enfoque predominantemente teórico en lugar de computacionalmente intenso en estos trabajos de investigación. El Departamento de Matemáticas identifica esta limitación como un problema y ve la necesidad de acceder a recursos computacionales más potentes para poder llevar a cabo cálculos matemáticos a gran escala con fines investigativos.
 
-    ¿Cómo podrían satisfacerse las demandas de cómputo requeridas para la investigación matemática utilizando los recursos disponibles de manera eficiente? ¿Cómo se podría facilitar el acceso y uso de estos recursos para que puedan ser utilizados por la comunidad universitaria sin necesidad de conocimientos técnicos avanzados?
+  \textbf{Formulación del problema}
 
-    \subsection{1.3 Objetivos}
+  ¿Cómo podrían satisfacerse las demandas de cómputo requeridas para la investigación matemática utilizando los recursos disponibles de manera eficiente? ¿Cómo se podría facilitar el acceso y uso de estos recursos para que puedan ser utilizados por la comunidad universitaria sin necesidad de conocimientos técnicos avanzados?
 
-    \textbf{Objetivo general}
+  \subsection{1.3 Objetivos}
 
-    La presente tesis tiene como objetivo desarrollar un servicio de computación con capacidades de paralelización, el cual estará disponible para la comunidad universitaria y se enfocará en apoyar la investigación en el ámbito académico. Para lograr esta meta, se propone aprovechar los recursos existentes en el Departamento de Matemáticas de la Universidad del Valle. Este servicio busca optimizar el uso de los recursos informáticos y permitir una mayor eficiencia en el procesamiento de datos, mejorando así las posibilidades de investigación y contribuyendo al avance de la comunidad académica en general.
+  \textbf{Objetivo general}
 
-    \textbf{Objetivos específicos}
-    \begin{enumerate}
-        \item Identificar recursos disponibles y necesidades investigativas.
-        \item Diseñar una solución que considere los requerimientos de los usuarios y aproveche las capacidades de los recursos computacionales mediante la implementación de un gestor de cola de tareas.
-        \item Llevar a cabo la instalación, documentación y puesta a punto de herramientas que apoyen los procesos de investigación y docencia en el área de matemáticas, facilitando el uso del servicio.
-        \item  Llevar a cabo pruebas de uso de la infraestructura y de las aplicaciones desplegadas en este trabajo.
-    \end{enumerate}
-\end{multicols}
+  La presente tesis tiene como objetivo desarrollar un servicio de computación con capacidades de paralelización, el cual estará disponible para la comunidad universitaria y se enfocará en apoyar la investigación en el ámbito académico. Para lograr esta meta, se propone aprovechar los recursos existentes en el Departamento de Matemáticas de la Universidad del Valle. Este servicio busca optimizar el uso de los recursos informáticos y permitir una mayor eficiencia en el procesamiento de datos, mejorando así las posibilidades de investigación y contribuyendo al avance de la comunidad académica en general.
 
-\begin{minipage}{0.5\textwidth}
+  \textbf{Objetivos específicos}
+  \begin{enumerate}
+    \item Identificar recursos disponibles y necesidades investigativas.
+    \item Diseñar una solución que considere los requerimientos de los usuarios y aproveche las capacidades de los recursos computacionales mediante la implementación de un gestor de cola de tareas.
+    \item Llevar a cabo la instalación, documentación y puesta a punto de herramientas que apoyen los procesos de investigación y docencia en el área de matemáticas, facilitando el uso del servicio.
+    \item  Llevar a cabo pruebas de uso de la infraestructura y de las aplicaciones desplegadas en este trabajo.\newline
+  \end{enumerate}
+
+  \begin{table}[h]
     \centering
-    \begin{tabular}{p{7cm}p{7cm}}
+    \begin{tabular}{p{7cm}|p{7cm}}
       \hline
-      \centering\textbf{Objetivos Específicos}                                                                                          & \textbf{Producto(s) Esperados}                                                                                                                                  \\
+      \textbf{Objetivos Específicos} & \textbf{Producto(s) Esperados}\\
       \hline
-      \text Identificar recursos disponibles y necesidades investigativas.                                                                                                                               & Documento expresando la arquitectura de los recursos y las necesidades a considerar.                                                                            \\
+      Identificar recursos disponibles y necesidades investigativas.& Documento expresando la arquitectura de los recursos y las necesidades a considerar. \\
       \hline
-      \text Diseñar una solución que considere los requerimientos de los usuarios y aproveche las capacidades de los recursos computacionales mediante la implementación de un gestor de cola de tareas. & Documentación, scripts, programas y pruebas básicas de operación que simplifiquen o automaticen el mantenimiento y administración del gestor de cola de tareas. \\
+      Diseñar una solución que considere los requerimientos de los usuarios y aproveche las capacidades de los recursos computacionales mediante la implementación de un gestor de cola de tareas. & Documentación, scripts, programas y pruebas básicas de operación que simplifiquen o automaticen el mantenimiento y administración del gestor de cola de tareas. \\
       \hline
-      \text Llevar a cabo la instalación, documentación y puesta a punto de herramientas que apoyen los procesos de investigación y docencia en el área de matemáticas, facilitando el uso del servicio. & Documentación, scripts y programas que automaticen y faciliten la utilización del servicio para los estudiantes o profesores.                                   \\
+      Llevar a cabo la instalación, documentación y puesta a punto de herramientas que apoyen los procesos de investigación y docencia en el área de matemáticas, facilitando el uso del servicio. & Documentación, scripts y programas que automaticen y faciliten la utilización del servicio para los estudiantes o profesores.\\
       \hline
-      \text Llevar a cabo pruebas de uso de la infraestructura y de las aplicaciones desplegadas en este trabajo.                                                                                        & Reporte de pruebas en donde se evidencie la correcta funcionalidad y la eficiencia de los recursos.                                                             \\
+      Llevar a cabo pruebas de uso de la infraestructura y de las aplicaciones desplegadas en este trabajo. & Reporte de pruebas en donde se evidencie la correcta funcionalidad y la eficiencia de los \\
       \hline
     \end{tabular}
-    \captionof{table}{Objetivos Específicos}
+    \caption{Objetivos Específicos}
     \label{table:table1}
-\end{minipage}
-\newline
-\begin{multicols}{2}
+  \end{table}
 
   \subsection{1.4 Estado del arte}
+
   Desde sus orígenes, la informática y la computación han estado íntimamente relacionadas con las matemáticas. En la actualidad, la capacidad para realizar cálculos y análisis de datos a gran escala resulta fundamental en numerosos campos de investigación científica. Sin embargo, en la Universidad del Valle se ha identificado una limitación en el acceso a estas capacidades computacionales, lo que ha ocasionado que los trabajos de investigación se centren principalmente en enfoques teóricos, en lugar de los enfoques computacionalmente intensivos. Es importante señalar que este problema no solo afecta al Departamento de Matemáticas, sino también a otras áreas de investigación de la universidad.
-  
-  Para abordar esta problemática, resulta crucial considerar el estado actual del arte en cuanto a la disponibilidad de recursos informáticos para la investigación. En este sentido, es imperativo evaluar cuidadosamente las opciones existentes, teniendo en cuenta los costos y la viabilidad de cada alternativa dentro del contexto de la Universidad del Valle. En cualquier caso, el acceso a recursos informáticos de mayor capacidad resulta esencial para llevar a cabo cálculos matemáticos a gran escala con fines investigativos.\newline   
+
+  Para abordar esta problemática, resulta crucial considerar el estado actual del arte en cuanto a la disponibilidad de recursos informáticos para la investigación. En este sentido, es imperativo evaluar cuidadosamente las opciones existentes, teniendo en cuenta los costos y la viabilidad de cada alternativa dentro del contexto de la Universidad del Valle. En cualquier caso, el acceso a recursos informáticos de mayor capacidad resulta esencial para llevar a cabo cálculos matemáticos a gran escala con fines investigativos.
+
   Adicionalmente, es de vital importancia indagar acerca de las mejores prácticas y estrategias empleadas por otras instituciones y organizaciones para abordar problemáticas similares. En este sentido, es posible analizar experiencias exitosas en la implementación de soluciones informáticas efectivas para la investigación.
-  
-  En primer lugar, exploraremos el concepto de computación distribuida y, posteriormente, analizaremos proyectos que emplean este enfoque con el fin de alcanzar resultados similares a los objetivos que se persiguen en el presente proyecto. 
+
+  En primer lugar, exploraremos el concepto de computación distribuida y, posteriormente, analizaremos proyectos que emplean este enfoque con el fin de alcanzar resultados similares a los objetivos que se persiguen en el presente proyecto.
 
   \subsubsection{1.4.1 Cómo resolver problemas complejos en tiempos asequibles}
-  
+
   La computación distribuida es un enfoque de procesamiento de datos en el que múltiples computadoras se utilizan en conjunto para realizar tareas de cómputo complejas de manera coordinada y en paralelo. En lugar de tener una sola computadora realizando todos los cálculos, la carga de trabajo se distribuye entre muchas computadoras que trabajan en paralelo para resolver el problema más rápidamente.
 
   Este enfoque es particularmente útil para resolver problemas que requieren grandes cantidades de datos o cálculos intensivos, como la simulación de sistemas complejos, el procesamiento de imágenes y video, y la modelización de sistemas físicos o biológicos.
@@ -84,21 +82,21 @@
   Existen diversas formas en las que los sistemas distribuidos pueden comunicarse y resolver problemas, cada una con sus ventajas y desventajas dependiendo del contexto en el que se apliquen. Sin embargo, para los fines de este proyecto, nos centraremos en los tipos de sistemas distribuidos HPC y HTC.
   \vspace{3mm}
 
-  \textbf{HPC(High Performance Computing)}  
-  \newline
+  \textbf{HPC(High Performance Computing)}
+
   Entre los tipos de sistemas distribuidos más notables, se encuentra el HPC, que se enfoca en la ejecución de tareas que demandan una alta capacidad de procesamiento. Se utiliza en campos como la investigación científica, el diseño de productos y el análisis financiero, entre otros.
 
   \textbf{HTC (High Throughput Computing)}
-  \newline  
+
   Otro tipo de sistema distribuido es el HTC, que se centra en realizar numerosas tareas en un tiempo de respuesta reducido. Se emplea en áreas como la bioinformática, la simulación de procesos industriales y la creación de contenido multimedia.
   A lo largo del tiempo, han surgido diversas soluciones de software para hacer frente a la complejidad que conlleva el uso de sistemas distribuidos. Entre las soluciones más destacadas y relevantes para este proyecto se encuentran SLURM, que utiliza HPC, y HTCondor, basado en HTC.  \vspace{3mm}
 
-  \textbf{SLURM Y HTCondor}  
-  \newline
-  A partir de las dificultades inherentes a la utilización de sistemas distribuidos, se han desarrollado diversas soluciones de software. En el marco de este proyecto, se consideran pertinentes dos de los más populares gestores de cola de tareas: SLURM y HTCondor, ambos sistemas tienen enfoques diferentes en términos de diseño y funcionalidad. SLURM está diseñado principalmente para clústeres de computación de alta velocidad y está optimizado para la gestión de trabajos de paralelización de tareas computacionales. Por otro lado, HTCondor es un sistema de gestión de recursos más general que puede manejar sistemas heterogéneos y distribuidos, incluidos los recursos de la nube y las redes internacionales.\newline
+  \textbf{SLURM Y HTCondor}
+
+  A partir de las dificultades inherentes a la utilización de sistemas distribuidos, se han desarrollado diversas soluciones de software. En el marco de este proyecto, se consideran pertinentes dos de los más populares gestores de cola de tareas: SLURM y HTCondor, ambos sistemas tienen enfoques diferentes en términos de diseño y funcionalidad. SLURM está diseñado principalmente para clústeres de computación de alta velocidad y está optimizado para la gestión de trabajos de paralelización de tareas computacionales. Por otro lado, HTCondor es un sistema de gestión de recursos más general que puede manejar sistemas heterogéneos y distribuidos, incluidos los recursos de la nube y las redes internacionales.
 
   \textbf{SLURM (Simple Linux Utility for Resource Management)}
-  \newline
+
   SLURM es un sistema de gestión de recursos de código abierto para clústeres de computadoras de alto rendimiento (HPC) en entornos de sistemas distribuidos. SLURM es utilizado por numerosas instituciones académicas, gubernamentales y comerciales para gestionar y programar trabajos de computación en clústeres de Linux de diferentes tamaños, desde pequeños clústeres universitarios hasta grandes supercomputadoras.
 
   Este gestor de cola de tareas se centra en la gestión de tareas de procesamiento de alta velocidad y de alto rendimiento, como la simulación, la modelización, la genómica, la bioinformática, la física y la ingeniería. Permite la ejecución eficiente de trabajos paralelos y distribuidos en clústeres de HPC y utiliza un enfoque modular que permite una configuración personalizada para satisfacer las necesidades específicas de cada clúster.
@@ -107,7 +105,7 @@
   \vspace{3mm}
 
   \textbf{HTCondor (High Throughput Computing Condor)}
-  \newline
+  
   HTCondor es un sistema de software de código abierto que se utiliza para la gestión y programación de trabajos de alta capacidad en entornos de computación de alto rendimiento. Este sistema permite la utilización efectiva de la potencia de cálculo de máquinas conectadas en una red, ya sea un único clúster, un conjunto de clústeres en un campus, recursos en la nube independientes o unidos temporalmente a un clúster local, o redes internacionales.
 
   HTCondor es conocido por su capacidad para gestionar sistemas heterogéneos y distribuidos, lo que lo hace especialmente adecuado para entornos en los que se utilizan diferentes sistemas operativos y arquitecturas de hardware. Se utiliza en muchos campos, incluyendo la investigación académica, la física, la ingeniería, la biología y la industria.
@@ -122,33 +120,31 @@
 
   El análisis de proyectos similares es importante para contextualizar la investigación actual en el campo de estudio y para identificar qué áreas aún necesitan ser exploradas. Con esta revisión, se espera proporcionar un marco de referencia útil para la investigación actual y, en última instancia, mejorar la comprensión de los desafíos y las oportunidades en el campo.
 
-  \vspace{3mm}
+  \textbf{PL-Grid (Polonia)}
 
-\textbf{PL-Grid (Polonia)}
-  \newline
   PL-Grid es un proyecto polaco que tiene como objetivo principal proporcionar una infraestructura de computación distribuida de alta capacidad a partir de recursos heterogéneos con interfaz unificada que permita el fácil acceso a la infraestructura informática distribuida a gran escala para apoyar la investigación científica y académica. La red es gestionada por el Consorcio Interdisciplinario de Infraestructuras y Tecnologías de Información (PL-Grid Consortium) y ofrece recursos de supercomputación y almacenamiento a investigadores y científicos en todo el país. Este proyecto fue iniciado en 2009 en respuesta a la necesidad de los científicos polacos de tener un acceso más fácil a los recursos de computación de alto rendimiento (HPC). La infraestructura está conformada por cinco centros principales de supercomputación y redes polacas, distribuidos geográficamente.
-  
+
   La infraestructura de PL-Grid consta de varios clústeres de computación de alto rendimiento, almacenamiento de datos a gran escala y herramientas de software especializadas que se utilizan para la simulación y el modelado de problemas complejos en una variedad de campos de investigación, incluyendo física, biología, química, ciencias de la tierra y la astronomía, entre otros.
-  
+
   Además, PL-Grid proporciona a los investigadores acceso a una amplia gama de herramientas y recursos, como bibliotecas de software, bases de datos y herramientas de visualización, lo que permite a los usuarios procesar grandes cantidades de datos y realizar investigaciones más complejas.
-  
+
   PL-Grid también se utiliza para fomentar la colaboración entre investigadores y científicos polacos e internacionales. Los usuarios pueden solicitar tiempo de computación en la infraestructura de PL-Grid y trabajar en proyectos conjuntos con otros usuarios en todo el mundo. La infraestructura de PL-Grid se actualiza y se expande constantemente para satisfacer las necesidades cambiantes de la investigación científica y académica en Polonia y en el extranjero.
-  
+
 
   \textbf{BAF2 (Universidad de Bonn, Alemania)}
-  \newline
+
   BAF2 es un clúster de computación de la Universidad de Bonn, Alemania. El nombre "BAF2" se refiere al compuesto químico fluoruro de bario, que es utilizado como un detector de radiación en física de partículas y astrofísica.
-  
+
   El clúster de la Universidad de Bonn utiliza HTCondor como gestor de cola de tareas y ofrece una interfaz de usuario simple a través de Jupyterhub para interactuar con los recursos disponibles y enviar trabajos. BAF2 utiliza contenedores para proporcionar un ambiente flexible al usuario mientras se mantiene la integridad del sistema.
 
   Este clúster computacional se compone de varios nodos de procesamiento, cada uno equipado con múltiples núcleos de procesamiento. El clúster utiliza Linux en su sistema operativo y está diseñado para ser utilizado en aplicaciones científicas y de investigación, como cálculos numéricos, simulaciones y modelado computacional.
 
   Este sistema se utiliza en varias áreas de investigación en la Universidad de Bonn, incluyendo física de partículas, astrofísica, biología computacional y química teórica, entre otras. Los investigadores de la universidad y de otras instituciones pueden solicitar tiempo de procesamiento en el clúster BAF2 para ejecutar sus cálculos y simulaciones.
 
-    Además, el clúster BAF2 se utiliza para enseñar a los estudiantes universitarios sobre el uso de la computación de alto rendimiento en la investigación científica y para proporcionarles experiencia práctica en el uso de herramientas y software especializados en la materia. En general, BAF2 es un recurso valioso para la investigación y la educación en la Universidad de Bonn y en la comunidad científica en general.
+  Además, el clúster BAF2 se utiliza para enseñar a los estudiantes universitarios sobre el uso de la computación de alto rendimiento en la investigación científica y para proporcionarles experiencia práctica en el uso de herramientas y software especializados en la materia. En general, BAF2 es un recurso valioso para la investigación y la educación en la Universidad de Bonn y en la comunidad científica en general.
 
   \textbf{CERN (Conseil Européen pour la Recherche Nucléaire)}
-  \newline
+  
   El CERN (Organización Europea para la Investigación Nuclear) es una de las organizaciones de investigación más importantes del mundo, fundada en 1954 en Ginebra, Suiza. El CERN es famoso por sus experimentos de alta energía, como el Gran Colisionador de Hadrones (LHC), y ha sido fundamental en el descubrimiento del bosón de Higgs.
 
   El CERN cuenta con una gran cantidad de clústeres computacionales, provenientes de diferentes universidades y centros de investigación, que representan recursos computacionales heterogéneos distribuidos geográficamente, para procesar y analizar los datos generados por sus experimentos. En particular, el LHC produce enormes cantidades de datos, que deben ser procesados y analizados de manera eficiente. Para lograrlo, el CERN utiliza diferentes sistemas de gestión de cola de tareas, entre ellos SLURM y HTCondor.
@@ -158,15 +154,15 @@
   Por otro lado, HTCondor se utiliza en el clúster BOINC, que es una plataforma de cómputo voluntario utilizada por el CERN y otros proyectos científicos.
 
   \textbf{BOINC (Berkeley Open Infrastructure for Network Computing)}
-  \newline
+
   BOINC es una plataforma de software libre para la computación distribuida en la que los usuarios pueden contribuir con la capacidad de procesamiento de sus computadoras personales para realizar cálculos complejos y procesamiento de datos. La plataforma fue desarrollada por el Laboratorio de Ciencias de la Computación de la Universidad de California, Berkeley, y es utilizada por numerosos proyectos científicos y de investigación.
 
   Este software permite a los proyectos científicos distribuir tareas de cálculo entre una red de voluntarios que han instalado el software BOINC en sus computadoras personales. Cada vez que un voluntario utiliza su computadora, el software BOINC se activa y descarga una tarea de cálculo del servidor central del proyecto. Una vez que se completa la tarea, los resultados se envían de vuelta al servidor del proyecto. De esta manera, BOINC permite que la capacidad de procesamiento no utilizada de miles de computadoras personales se utilice para resolver problemas científicos y de investigación.
 
   BOINC es importante para la computación distribuida porque permite que los proyectos científicos tengan acceso a una gran cantidad de recursos de procesamiento sin tener que invertir en costosos equipos y servidores. Además, los voluntarios que contribuyen con su capacidad de procesamiento se benefician al participar en proyectos que pueden tener un impacto significativo en la investigación científica, como el modelado del clima y el desarrollo de nuevas terapias médicas. \cite{BOINC-1}
-  
+
   \textbf{Folding@home}
-  \newline
+
   Folding@home es un proyecto de investigación científica que utiliza la capacidad de procesamiento de varias computadoras conectadas en red para resolver problemas complejos y avanzados. Está basado en la misma arquitectura de computación distribuida BOINC y es un proyecto que se ha vuelto muy popular en los últimos años, especialmente durante la pandemia de COVID-19. El objetivo principal de este proyecto es ayudar a la comunidad científica a comprender mejor las enfermedades, como el Alzheimer, el Parkinson y las enfermedades cardíacas, entre otras. Para lograr esto, cualquier persona puede participar simplemente instalando el software proporcionado por la institución en su máquina personal, lo que permitirá que su unidad central de procesamiento (CPU) y su unidad de procesamiento de gráficos (GPU) se utilicen para ejecutar piezas de simulaciones, que posteriormente son compiladas por el servidor central.
 
   La razón de que Folding@home sea uno de los proyectos de computación distribuida más grandes y populares en todo el mundo, se debe a que cualquier persona puede unirse y contribuir a esta causa tan importante. Al participar en este proyecto, los usuarios pueden sentirse parte de una comunidad que está trabajando para hacer una diferencia en el mundo y ayudar a avanzar en la investigación médica.
@@ -179,108 +175,106 @@
 
   En la siguiente tabla se muestran los computadores y servidores con los que cuentan dichos espacios:
   \vspace{3mm}
-  \end{multicols}
 
   \begin{table}[ht]
     \centering
     \begin{tabular}{c|c|c|c|c|c}
       \hline
-    \multicolumn{1}{m{5cm}|}{\centering %
-  \textbf{Rubro}} & \multicolumn{1}{m{1.3cm}|}%
-  {\centering \textbf{Costos} \\
-  \textbf{Unidad}} & \multicolumn{1}{m{1.6cm}|}%
-  {\centering \textbf{Núcleos por}\\
-  \textbf{Unidad}} &  \multicolumn{1}{|m{1.6cm}|}{\centering %
-  \textbf{Unidades}} & \multicolumn{1}{m{1.6cm}|}%
-  {\centering \textbf{Total}\\
-  \textbf{Unidades}} & \multicolumn{1}{|m{2.2cm}}{\centering %
-  \textbf{Total}}\tabularnewline \hline
-  \multicolumn{1}{m{5cm}|}{\raggedright %
-  \textbf{Servidores en Clúster Bochica}}& " " & " " & " " & " " &" " \\  
-  \hline
-  \multicolumn{1}{m{5cm}|}%
-{\centering COMPUTADOR HP \\
-DL360E GEN 8} & 15,880,000& 16 & 4 & 64 & 63,520,000 \\
-  \hline
-  \multicolumn{1}{m{5cm}|}%
-{\centering SERVIDOR DELL \\
-POWEREDGE 1950} & 8,590,000& 8 & 4 & 32 & 34,360,000 \\
-  \hline
-  \multicolumn{1}{m{5cm}|}{\raggedright %
-  \textbf{Subtotal}} & " " & " " & \textbf{8} & \textbf{96} & \textbf{97,880,000} \\
-  \hline
-  \multicolumn{1}{m{5cm}|}%
-  {\raggedright \textbf{Computadores en Sala de } \\
-  \textbf{Cómputo Jürgen Tischer}} & " " & " " & 8 & 96 & 97,880,000 \\
-  \hline
-  \multicolumn{1}{m{5cm}|}%
-  {\centering COMPUTADOR \\
-  WORKSTATION HP Z1} & 13,950,000& 10 & 2 & 20 & 27,900,000 \\
-  \hline
-  \multicolumn{1}{m{5cm}|}%
-  {\centering COMPUTADOR \\
-  WORKSTATION HP Z2}  & 9,900,000& 8 & 1 & 8 & 9,900,000 \\
-  \hline
-  \multicolumn{1}{m{5cm}|}%
-  {\centering COMPUTADOR DELL \\
-  PRECISION T3610} & 4,700,000& 4 & 30 & 120 & 141,000,000 \\
-  \hline
-  \multicolumn{1}{m{5cm}|}%
-  {\centering COMPUTADOR DELL \\
-  PRECISION T5500}& 3,240,000& 2 & 7 & 14 & 22,680,000 \\
-  \hline
-  \multicolumn{1}{m{5cm}|}{\raggedright %
-  \textbf{Subtotal}} & " " & " " & \textbf{40} & \textbf{162} & \textbf{201,480,000}\\
-  \hline
-  \multicolumn{1}{m{5cm}|}{\raggedright %
-  \textbf{Total}} & " " & " " & \textbf{48} & \textbf{258} & \textbf{299,360,000} \\
-  \hline
-  \end{tabular}
-  \caption{Recursos Computacionales}
-  \label{table:table2}
-\end{table}
+      \multicolumn{1}{m{5cm}|}{\centering %
+      \textbf{Rubro}}                         & \multicolumn{1}{m{1.3cm}|}                                                                       %
+      {\centering \textbf{Costos}                                                                                                                \\
+      \textbf{Unidad}}                        & \multicolumn{1}{m{1.6cm}|}                                                                       %
+      {\centering \textbf{Núcleos por}                                                                                                           \\
+      \textbf{Unidad}}                        & \multicolumn{1}{|m{1.6cm}|}{\centering                                                           %
+      \textbf{Unidades}}                      & \multicolumn{1}{m{1.6cm}|}                                                                       %
+      {\centering \textbf{Total}                                                                                                                 \\
+      \textbf{Unidades}}                      & \multicolumn{1}{|m{2.2cm}}{\centering                                                            %
+      \textbf{Total}}\tabularnewline \hline
+      \multicolumn{1}{m{5cm}|}{\raggedright %
+      \textbf{Servidores en Clúster Bochica}} & " "                                    & " " & " "         & " "          & " "                  \\
+      \hline
+      \multicolumn{1}{m{5cm}|}%
+      {\centering COMPUTADOR HP                                                                                                                  \\
+      DL360E GEN 8}                           & 15,880,000                             & 16  & 4           & 64           & 63,520,000           \\
+      \hline
+      \multicolumn{1}{m{5cm}|}%
+      {\centering SERVIDOR DELL                                                                                                                  \\
+      POWEREDGE 1950}                         & 8,590,000                              & 8   & 4           & 32           & 34,360,000           \\
+      \hline
+      \multicolumn{1}{m{5cm}|}{\raggedright %
+      \textbf{Subtotal}}                      & " "                                    & " " & \textbf{8}  & \textbf{96}  & \textbf{97,880,000}  \\
+      \hline
+      \multicolumn{1}{m{5cm}|}%
+      {\raggedright \textbf{Computadores en Sala de }                                                                                            \\
+      \textbf{Cómputo Jürgen Tischer}}        & " "                                    & " " & 8           & 96           & 97,880,000           \\
+      \hline
+      \multicolumn{1}{m{5cm}|}%
+      {\centering COMPUTADOR                                                                                                                     \\
+      WORKSTATION HP Z1}                      & 13,950,000                             & 10  & 2           & 20           & 27,900,000           \\
+      \hline
+      \multicolumn{1}{m{5cm}|}%
+      {\centering COMPUTADOR                                                                                                                     \\
+      WORKSTATION HP Z2}                      & 9,900,000                              & 8   & 1           & 8            & 9,900,000            \\
+      \hline
+      \multicolumn{1}{m{5cm}|}%
+      {\centering COMPUTADOR DELL                                                                                                                \\
+      PRECISION T3610}                        & 4,700,000                              & 4   & 30          & 120          & 141,000,000          \\
+      \hline
+      \multicolumn{1}{m{5cm}|}%
+      {\centering COMPUTADOR DELL                                                                                                                \\
+      PRECISION T5500}                        & 3,240,000                              & 2   & 7           & 14           & 22,680,000           \\
+      \hline
+      \multicolumn{1}{m{5cm}|}{\raggedright %
+      \textbf{Subtotal}}                      & " "                                    & " " & \textbf{40} & \textbf{162} & \textbf{201,480,000} \\
+      \hline
+      \multicolumn{1}{m{5cm}|}{\raggedright %
+      \textbf{Total}}                         & " "                                    & " " & \textbf{48} & \textbf{258} & \textbf{299,360,000} \\
+      \hline
+    \end{tabular}
+    \caption{Recursos Computacionales}
+    \label{table:table2}
+  \end{table}
 
-\begin{multicols}{2}
-  Adicionalmente, los equipos cuentan con unidades de alimentación ininterrumpida (UPS, por sus siglas en inglés), a la par de un dispositivo de conmutación de red (switch) que interconecta a los servidores presentes en el Clúster. Es importante destacar que todos los equipos informáticos mantienen una conexión con la red universitaria perteneciente al campus y, asimismo, disponen de acceso a internet.
-  
-  \subsubsection{1.5.2 Recursos de software}
-  
-  La Universidad del Valle dispone de licencias de software que pueden resultar de gran utilidad para el desarrollo de esta tesis, entre ellas se encuentran Wolfram Mathematica, Mathematica Licence Manager, gridMathematica, MATLAB, MATLAB Licence Manager y MATLAB Parallel Server. Además de esto se utilizarán licencias de software de uso libre.
-  
-  \subsubsection{1.5.3 Necesidades por parte del departamento de Matemáticas}
-  El profesor León Escobar, quien está a cargo de la sala de Matemáticas Jürgen Tischer y es co-director de esta tesis, ha destacado ciertas características que deben ser tomadas en cuenta en el desarrollo de esta tesis. Entre los principales aspectos destacados se encuentra la oportunidad de emplear computación paralela, utilizando diferentes lenguajes y herramientas como Python, C++, R, Wolfram Mathematica y MATLAB.
-  Además, el profesor ha mencionado que prefiere el uso de Slurm como gestor de cola de tareas, ya que es ampliamente conocido en el ámbito académico y familiar para él.
-  
-  \subsection{1.6 Propuesta de solución}
-  \subsubsection{1.6.1 Por qué se soluciona}
+    Adicionalmente, los equipos cuentan con unidades de alimentación ininterrumpida (UPS, por sus siglas en inglés), a la par de un dispositivo de conmutación de red (switch) que interconecta a los servidores presentes en el Clúster. Es importante destacar que todos los equipos informáticos mantienen una conexión con la red universitaria perteneciente al campus y, asimismo, disponen de acceso a internet.
 
-  En la Universidad del Valle, actualmente no existe un recurso computacional distribuido similar al que se propone en este estudio, al menos no en términos de accesibilidad para la comunidad universitaria. Es decir, a pesar de que la institución cuenta con ciertos recursos computacionales, estos no se encuentran organizados y estructurados de tal manera que puedan ser utilizados de forma distribuida por la comunidad académica. Esto representa una limitación significativa en términos de acceso y aprovechamiento de los recursos computacionales existentes en la universidad, lo que puede afectar el desarrollo de actividades de investigación y docencia que requieran de alta capacidad de procesamiento y almacenamiento de datos. Por esta razón, la implementación de un recurso computacional distribuido como el propuesto en este proyecto representa una solución innovadora y necesaria para abordar las necesidades computacionales de la comunidad universitaria en la Universidad del Valle.
+    \subsubsection{1.5.2 Recursos de software}
 
-  Además, la disponibilidad de este recurso podría mejorar la colaboración y la comunicación entre investigadores y estudiantes al facilitar el intercambio de recursos y datos, y alentar la creación de nuevos proyectos interdisciplinarios.
-  
-  En consecuencia, la implementación de la solución propuesta tendría un efecto positivo en el avance de la investigación y el desarrollo en la universidad, lo que podría tener implicaciones en la sociedad en general a través de la generación de nuevos conocimientos y tecnologías.
+    La Universidad del Valle dispone de licencias de software que pueden resultar de gran utilidad para el desarrollo de esta tesis, entre ellas se encuentran Wolfram Mathematica, Mathematica Licence Manager, gridMathematica, MATLAB, MATLAB Licence Manager y MATLAB Parallel Server. Además de esto se utilizarán licencias de software de uso libre.
 
-  \subsubsection{1.6.2 Cómo se soluciona}
-  A partir de las limitaciones con los recursos existentes, las necesidades anteriormente expresadas y la investigación realizada, se identifica que una propuesta de solución debe contar con las siguientes características:
-  \begin{itemize}
-    \item Sistema Operativo basado en Linux: Se propone utilizar un sistema operativo basado en Linux debido a su estabilidad, seguridad y eficiencia en el uso de recursos.
-    \item Licencias de software: se aprovecharán aquellas que ya se encuentran en posesión de la universidad, en concreto, las correspondientes a los programas Wolfram Mathematica y Matlab, siempre y cuando dicha institución continúe sufragando los correspondientes pagos. El objetivo de esta medida es evitar incurrir en costos adicionales que pudieran resultar innecesarios.
-    \item Software gratuito y de código abierto: Se dará preferencia al uso de software gratuito y de código abierto para minimizar los costos y fomentar la colaboración y la comunidad.
-    \item Gestor de cola de tareas: Se implementará un gestor de cola de tareas con capacidades de paralelización para aprovechar al máximo los recursos disponibles y aumentar la eficiencia en la realización de tareas.
-    \item Interfaz de usuario: Se debe implementar alguna interfaz de usuario para que los usuarios puedan acceder a los recursos de manera fácil y eficiente en el campus universitario.
-    \item Sistema de archivos compartidos: Se utilizará un sistema de archivos compartidos entre las máquinas para facilitar el intercambio de datos requeridos para la ejecución de tareas.
-    \end{itemize} 
+    \subsubsection{1.5.3 Necesidades por parte del departamento de Matemáticas}
+
+    El profesor León Escobar, quien está a cargo de la sala de Matemáticas Jürgen Tischer y es co-director de esta tesis, ha destacado ciertas características que deben ser tomadas en cuenta en el desarrollo de esta tesis. Entre los principales aspectos destacados se encuentra la oportunidad de emplear computación paralela, utilizando diferentes lenguajes y herramientas como Python, C++, R, Wolfram Mathematica y MATLAB.
+    Además, el profesor ha mencionado que prefiere el uso de Slurm como gestor de cola de tareas, ya que es ampliamente conocido en el ámbito académico y familiar para él.
+
+    \subsection{1.6 Propuesta de solución}
+    \subsubsection{1.6.1 Por qué se soluciona}
+
+    En la Universidad del Valle, actualmente no existe un recurso computacional distribuido similar al que se propone en este estudio, al menos no en términos de accesibilidad para la comunidad universitaria. Es decir, a pesar de que la institución cuenta con ciertos recursos computacionales, estos no se encuentran organizados y estructurados de tal manera que puedan ser utilizados de forma distribuida por la comunidad académica. Esto representa una limitación significativa en términos de acceso y aprovechamiento de los recursos computacionales existentes en la universidad, lo que puede afectar el desarrollo de actividades de investigación y docencia que requieran de alta capacidad de procesamiento y almacenamiento de datos. Por esta razón, la implementación de un recurso computacional distribuido como el propuesto en este proyecto representa una solución innovadora y necesaria para abordar las necesidades computacionales de la comunidad universitaria en la Universidad del Valle.
+
+    Además, la disponibilidad de este recurso podría mejorar la colaboración y la comunicación entre investigadores y estudiantes al facilitar el intercambio de recursos y datos, y alentar la creación de nuevos proyectos interdisciplinarios.
+
+    En consecuencia, la implementación de la solución propuesta tendría un efecto positivo en el avance de la investigación y el desarrollo en la universidad, lo que podría tener implicaciones en la sociedad en general a través de la generación de nuevos conocimientos y tecnologías.
+
+    \subsubsection{1.6.2 Cómo se soluciona}
+    A partir de las limitaciones con los recursos existentes, las necesidades anteriormente expresadas y la investigación realizada, se identifica que una propuesta de solución debe contar con las siguientes características:
+    \begin{itemize}
+      \item Sistema Operativo basado en Linux: Se propone utilizar un sistema operativo basado en Linux debido a su estabilidad, seguridad y eficiencia en el uso de recursos.
+      \item Licencias de software: se aprovecharán aquellas que ya se encuentran en posesión de la universidad, en concreto, las correspondientes a los programas Wolfram Mathematica y Matlab, siempre y cuando dicha institución continúe sufragando los correspondientes pagos. El objetivo de esta medida es evitar incurrir en costos adicionales que pudieran resultar innecesarios.
+      \item Software gratuito y de código abierto: Se dará preferencia al uso de software gratuito y de código abierto para minimizar los costos y fomentar la colaboración y la comunidad.
+      \item Gestor de cola de tareas: Se implementará un gestor de cola de tareas con capacidades de paralelización para aprovechar al máximo los recursos disponibles y aumentar la eficiencia en la realización de tareas.
+      \item Interfaz de usuario: Se debe implementar alguna interfaz de usuario para que los usuarios puedan acceder a los recursos de manera fácil y eficiente en el campus universitario.
+      \item Sistema de archivos compartidos: Se utilizará un sistema de archivos compartidos entre las máquinas para facilitar el intercambio de datos requeridos para la ejecución de tareas.
+    \end{itemize}
     Es importante destacar que la elección del sistema de gestión de cola de tareas apropiado para un proyecto específico se ve influenciada por una serie de factores que incluyen, entre otros, la naturaleza de las tareas a realizar, la magnitud y la complejidad del sistema distribuido involucrado, la disponibilidad de presupuesto y recursos. Por lo tanto, es necesario considerar cuidadosamente cada uno de estos factores antes de tomar una decisión informada sobre la elección del sistema de gestión de cola de tareas más adecuado para el proyecto en cuestión.
 
-En este caso específico, se ha optado por implementar SLURM como sistema de gestión de trabajos debido a su amplia adopción, sencillez de implementación y recomendación por parte del área de Matemática.
+    En este caso específico, se ha optado por implementar SLURM como sistema de gestión de trabajos debido a su amplia adopción, sencillez de implementación y recomendación por parte del área de Matemática.
 
-Para la implementación de la interfaz de usuario se ha seleccionado Jupyterhub como plataforma, en virtud de su capacidad para ejecutar código de múltiples lenguajes de programación, así como su capacidad para presentar dicha funcionalidad en una interfaz de usuario intuitiva y accesible a través de cualquier navegador web conectado a la red universitaria. La elección de Jupyterhub se justifica por su flexibilidad y adaptabilidad a las necesidades específicas del proyecto, así como por su capacidad para brindar una experiencia de usuario óptima en términos de eficiencia y usabilidad.
+    Para la implementación de la interfaz de usuario se ha seleccionado Jupyterhub como plataforma, en virtud de su capacidad para ejecutar código de múltiples lenguajes de programación, así como su capacidad para presentar dicha funcionalidad en una interfaz de usuario intuitiva y accesible a través de cualquier navegador web conectado a la red universitaria. La elección de Jupyterhub se justifica por su flexibilidad y adaptabilidad a las necesidades específicas del proyecto, así como por su capacidad para brindar una experiencia de usuario óptima en términos de eficiencia y usabilidad.
 
-En el próximo capítulo, se profundizará en los aspectos del diseño y la metodología utilizados para la presente solución. Se espera que mediante la implementación de esta propuesta se logre mejorar de manera sustancial la utilización de los recursos disponibles y aumentar la eficiencia en la ejecución de las tareas, lo cual a su vez permitirá la creación de nuevas oportunidades en el ámbito académico e investigativo de la universidad.
-\end{multicols}
+    En el próximo capítulo, se profundizará en los aspectos del diseño y la metodología utilizados para la presente solución. Se espera que mediante la implementación de esta propuesta se logre mejorar de manera sustancial la utilización de los recursos disponibles y aumentar la eficiencia en la ejecución de las tareas, lo cual a su vez permitirá la creación de nuevas oportunidades en el ámbito académico e investigativo de la universidad.
 
-\mylinespacing
-\mylinespacing
-\begin{tightcenter}
-\end{tightcenter}
+  \mylinespacing
+  \mylinespacing
+  \begin{tightcenter}
+  \end{tightcenter}
 \end{spacing}
