@@ -49,25 +49,6 @@
     \item  Llevar a cabo pruebas de uso de la infraestructura y de las aplicaciones desplegadas en este trabajo.\newline
   \end{enumerate}
 
-  \begin{table}[h]
-    \centering
-    \begin{tabular}{p{7cm}|p{7cm}}
-      \hline
-      \textbf{Objetivos Específicos} & \textbf{Producto(s) Esperados}\\
-      \hline
-      Identificar recursos disponibles y necesidades investigativas.& Documento expresando la arquitectura de los recursos y las necesidades a considerar. \\
-      \hline
-      Diseñar una solución que considere los requerimientos de los usuarios y aproveche las capacidades de los recursos computacionales mediante la implementación de un gestor de cola de tareas. & Documentación, scripts, programas y pruebas básicas de operación que simplifiquen o automaticen el mantenimiento y administración del gestor de cola de tareas. \\
-      \hline
-      Llevar a cabo la instalación, documentación y puesta a punto de herramientas que apoyen los procesos de investigación y docencia en el área de matemáticas, facilitando el uso del servicio. & Documentación, scripts y programas que automaticen y faciliten la utilización del servicio para los estudiantes o profesores.\\
-      \hline
-      Llevar a cabo pruebas de uso de la infraestructura y de las aplicaciones desplegadas en este trabajo. & Reporte de pruebas en donde se evidencie la correcta funcionalidad y la eficiencia de los \\
-      \hline
-    \end{tabular}
-    \caption{Objetivos Específicos}
-    \label{table:table1}
-  \end{table}
-
   \subsection{1.4 Estado del arte}
 
   Desde sus orígenes, la informática y la computación han estado íntimamente relacionadas con las matemáticas. En la actualidad, la capacidad para realizar cálculos y análisis de datos a gran escala resulta fundamental en numerosos campos de investigación científica. Sin embargo, en la Universidad del Valle se ha identificado una limitación en el acceso a estas capacidades computacionales, lo que ha ocasionado que los trabajos de investigación se centren principalmente en enfoques teóricos, en lugar de los enfoques computacionalmente intensivos. Es importante señalar que este problema no solo afecta al Departamento de Matemáticas, sino también a otras áreas de investigación de la universidad.
@@ -201,87 +182,9 @@
 
   La razón de que Folding@home sea uno de los proyectos de computación distribuida más grandes y populares en todo el mundo, se debe a que cualquier persona puede unirse y contribuir a esta causa tan importante. Al participar en este proyecto, los usuarios pueden sentirse parte de una comunidad que está trabajando para hacer una diferencia en el mundo y ayudar a avanzar en la investigación médica.
 
-  En el caso de Folding@home, se utiliza la computación distribuida para estudiar la forma en que las proteínas se pliegan, lo que es esencial para entender cómo funcionan las células y cómo se pueden prevenir las enfermedades relacionadas con el mal plegamiento de las proteínas, como el Alzheimer. Este proyecto ha permitido avances significativos en la investigación de enfermedades y ha demostrado el potencial de la computación distribuida para resolver problemas científicos complejos que serían difíciles de abordar de otra manera. \cite{Folding@home-1}\subsection{1.5 Análisis de recursos y necesidades}
-  En este capítulo se hace un análisis detallado de los recursos informáticos disponibles para esta tesis en el Departamento de Matemáticas de la Universidad del Valle.
-
-  \subsubsection{1.5.1 Recursos computacionales}
-  El departamento de Matemáticas cuenta con dos espacios dedicados a la utilización de recursos computacionales: un clúster computacional y una sala de cómputo.
-
-  En la siguiente tabla se muestran los computadores y servidores con los que cuentan dichos espacios:
-  \vspace{3mm}
-
-  \begin{table}[ht]
-    \centering
-    \begin{tabular}{c|c|c|c|c|c}
-      \hline
-      \multicolumn{1}{m{5cm}|}{\centering %
-      \textbf{Rubro}}                         & \multicolumn{1}{m{1.3cm}|}                                                                       %
-      {\centering \textbf{Costos}                                                                                                                \\
-      \textbf{Unidad}}                        & \multicolumn{1}{m{1.6cm}|}                                                                       %
-      {\centering \textbf{Núcleos por}                                                                                                           \\
-      \textbf{Unidad}}                        & \multicolumn{1}{|m{1.6cm}|}{\centering                                                           %
-      \textbf{Unidades}}                      & \multicolumn{1}{m{1.6cm}|}                                                                       %
-      {\centering \textbf{Total}                                                                                                                 \\
-      \textbf{Unidades}}                      & \multicolumn{1}{|m{2.2cm}}{\centering                                                            %
-      \textbf{Total}}\tabularnewline \hline
-      \multicolumn{1}{m{5cm}|}{\raggedright %
-      \textbf{Servidores en Clúster Bochica}} & " "                                    & " " & " "         & " "          & " "                  \\
-      \hline
-      \multicolumn{1}{m{5cm}|}%
-      {\centering COMPUTADOR HP                                                                                                                  \\
-      DL360E GEN 8}                           & 15,880,000                             & 16  & 4           & 64           & 63,520,000           \\
-      \hline
-      \multicolumn{1}{m{5cm}|}%
-      {\centering SERVIDOR DELL                                                                                                                  \\
-      POWEREDGE 1950}                         & 8,590,000                              & 8   & 4           & 32           & 34,360,000           \\
-      \hline
-      \multicolumn{1}{m{5cm}|}{\raggedright %
-      \textbf{Subtotal}}                      & " "                                    & " " & \textbf{8}  & \textbf{96}  & \textbf{97,880,000}  \\
-      \hline
-      \multicolumn{1}{m{5cm}|}%
-      {\raggedright \textbf{Computadores en Sala de }                                                                                            \\
-      \textbf{Cómputo Jürgen Tischer}}        & " "                                    & " " & 8           & 96           & 97,880,000           \\
-      \hline
-      \multicolumn{1}{m{5cm}|}%
-      {\centering COMPUTADOR                                                                                                                     \\
-      WORKSTATION HP Z1}                      & 13,950,000                             & 10  & 2           & 20           & 27,900,000           \\
-      \hline
-      \multicolumn{1}{m{5cm}|}%
-      {\centering COMPUTADOR                                                                                                                     \\
-      WORKSTATION HP Z2}                      & 9,900,000                              & 8   & 1           & 8            & 9,900,000            \\
-      \hline
-      \multicolumn{1}{m{5cm}|}%
-      {\centering COMPUTADOR DELL                                                                                                                \\
-      PRECISION T3610}                        & 4,700,000                              & 4   & 30          & 120          & 141,000,000          \\
-      \hline
-      \multicolumn{1}{m{5cm}|}%
-      {\centering COMPUTADOR DELL                                                                                                                \\
-      PRECISION T5500}                        & 3,240,000                              & 2   & 7           & 14           & 22,680,000           \\
-      \hline
-      \multicolumn{1}{m{5cm}|}{\raggedright %
-      \textbf{Subtotal}}                      & " "                                    & " " & \textbf{40} & \textbf{162} & \textbf{201,480,000} \\
-      \hline
-      \multicolumn{1}{m{5cm}|}{\raggedright %
-      \textbf{Total}}                         & " "                                    & " " & \textbf{48} & \textbf{258} & \textbf{299,360,000} \\
-      \hline
-    \end{tabular}
-    \caption{Recursos Computacionales}
-    \label{table:table2}
-  \end{table}
-
-    Adicionalmente, los equipos cuentan con unidades de alimentación ininterrumpida (UPS, por sus siglas en inglés), a la par de un dispositivo de conmutación de red (switch) que interconecta a los servidores presentes en el Clúster. Es importante destacar que todos los equipos informáticos mantienen una conexión con la red universitaria perteneciente al campus y, asimismo, disponen de acceso a internet.
-
-    \subsubsection{1.5.2 Recursos de software}
-
-    La Universidad del Valle dispone de licencias de software que pueden resultar de gran utilidad para el desarrollo de esta tesis, entre ellas se encuentran Wolfram Mathematica, Mathematica Licence Manager, gridMathematica, MATLAB, MATLAB Licence Manager y MATLAB Parallel Server. Además de esto se utilizarán licencias de software de uso libre.
-
-    \subsubsection{1.5.3 Necesidades por parte del departamento de Matemáticas}
-
-    El profesor León Escobar, quien está a cargo de la sala de Matemáticas Jürgen Tischer y es co-director de esta tesis, ha destacado ciertas características que deben ser tomadas en cuenta en el desarrollo de esta tesis. Entre los principales aspectos destacados se encuentra la oportunidad de emplear computación paralela, utilizando diferentes lenguajes y herramientas como Python, C++, R, Wolfram Mathematica y MATLAB.
-    Además, el profesor ha mencionado que prefiere el uso de Slurm como gestor de cola de tareas, ya que es ampliamente conocido en el ámbito académico y familiar para él.
-
-    \subsection{1.6 Propuesta de solución}
-    \subsubsection{1.6.1 Por qué se soluciona}
+  En el caso de Folding@home, se utiliza la computación distribuida para estudiar la forma en que las proteínas se pliegan, lo que es esencial para entender cómo funcionan las células y cómo se pueden prevenir las enfermedades relacionadas con el mal plegamiento de las proteínas, como el Alzheimer. Este proyecto ha permitido avances significativos en la investigación de enfermedades y ha demostrado el potencial de la computación distribuida para resolver problemas científicos complejos que serían difíciles de abordar de otra manera. \cite{Folding@home-1}
+  
+  \subsection{1.5 Propuesta de solución}
 
     En la Universidad del Valle, actualmente no existe un recurso computacional distribuido similar al que se propone en este estudio, al menos no en términos de accesibilidad para la comunidad universitaria. Es decir, a pesar de que la institución cuenta con ciertos recursos computacionales, estos no se encuentran organizados y estructurados de tal manera que puedan ser utilizados de forma distribuida por la comunidad académica. Esto representa una limitación significativa en términos de acceso y aprovechamiento de los recursos computacionales existentes en la universidad, lo que puede afectar el desarrollo de actividades de investigación y docencia que requieran de alta capacidad de procesamiento y almacenamiento de datos. Por esta razón, la implementación de un recurso computacional distribuido como el propuesto en este proyecto representa una solución innovadora y necesaria para abordar las necesidades computacionales de la comunidad universitaria en la Universidad del Valle.
 
@@ -289,7 +192,7 @@
 
     En consecuencia, la implementación de la solución propuesta tendría un efecto positivo en el avance de la investigación y el desarrollo en la universidad, lo que podría tener implicaciones en la sociedad en general a través de la generación de nuevos conocimientos y tecnologías.
 
-    \subsubsection{1.6.2 Cómo se soluciona}
+    \subsubsection{1.5.1 Consideraciones A La Propuesta De Solución}
     A partir de las limitaciones con los recursos existentes, las necesidades anteriormente expresadas y la investigación realizada, se identifica que una propuesta de solución debe contar con las siguientes características:
     \begin{itemize}
       \item Sistema Operativo basado en Linux: Se propone utilizar un sistema operativo basado en Linux debido a su estabilidad, seguridad y eficiencia en el uso de recursos.
