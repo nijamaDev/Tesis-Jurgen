@@ -14,7 +14,7 @@
 
   \textbf{Descripción del problema}
 
-  La falta de acceso a capacidades computacionales adecuadas está limitando la capacidad de los trabajos de investigación en el campo de las ciencias en la Universidad del Valle para abordar problemas complejos, realizar análisis de datos y simular procesos. Esto se ha reflejado en un enfoque predominantemente teórico en lugar de computacionalmente intenso en estos trabajos de investigación. El Departamento de Matemáticas identifica esta limitación como un problema y ve la necesidad de acceder a recursos computacionales más potentes para poder llevar a cabo cálculos matemáticos a gran escala con fines investigativos.
+  La falta de acceso a capacidades computacionales adecuadas está limitando la capacidad de los trabajos relacionados con la investigación, análisis de datos y simulación de procesos en el campo de la Ciencias en la Universidad del Valle. Esto se ha reflejado en un enfoque predominantemente teórico en lugar de computacionalmente intenso en estos trabajos de investigación. El Departamento de Matemáticas identifica esta limitación como un problema y ve la necesidad de acceder a recursos computacionales más potentes para poder llevar a cabo cálculos matemáticos a gran escala con fines investigativos.
 
   \textbf{Formulación del problema}
 
@@ -72,15 +72,22 @@
 
   Desde sus orígenes, la informática y la computación han estado íntimamente relacionadas con las matemáticas. En la actualidad, la capacidad para realizar cálculos y análisis de datos a gran escala resulta fundamental en numerosos campos de investigación científica. Sin embargo, en la Universidad del Valle se ha identificado una limitación en el acceso a estas capacidades computacionales, lo que ha ocasionado que los trabajos de investigación se centren principalmente en enfoques teóricos, en lugar de los enfoques computacionalmente intensivos. Es importante señalar que este problema no solo afecta al Departamento de Matemáticas, sino también a otras áreas de investigación de la universidad.
 
-  Para abordar esta problemática, resulta crucial considerar el estado actual del arte en cuanto a la disponibilidad de recursos informáticos para la investigación. En este sentido, es imperativo evaluar cuidadosamente las opciones existentes, teniendo en cuenta los costos y la viabilidad de cada alternativa dentro del contexto de la Universidad del Valle. En cualquier caso, el acceso a recursos informáticos de mayor capacidad resulta esencial para llevar a cabo cálculos matemáticos a gran escala con fines investigativos.
+  Para abordar esta problemática, resulta crucial considerar el estado actual del arte en cuanto a la disponibilidad de recursos informáticos para la investigación. Es importante aclarar que los recursos informáticos a considerar en el análisis tienen que ver con software, ya que este es esencial para llevar a cabo cálculos y análisis de datos a gran escala. Es necesario evaluar cuidadosamente las opciones existentes, teniendo en cuenta la viabilidad de cada alternativa dentro del contexto de la Universidad del Valle. 
 
   Adicionalmente, es de vital importancia indagar acerca de las mejores prácticas y estrategias empleadas por otras instituciones y organizaciones para abordar problemáticas similares. En este sentido, es posible analizar experiencias exitosas en la implementación de soluciones informáticas efectivas para la investigación.
 
   En primer lugar, exploraremos el concepto de computación distribuida y, posteriormente, analizaremos proyectos que emplean este enfoque con el fin de alcanzar resultados similares a los objetivos que se persiguen en el presente proyecto.
 
-  \subsubsection{1.4.1 Cómo resolver problemas complejos en tiempos asequibles}
+  \subsubsection{1.4.1 Computación Distribuida}
 
   La computación distribuida es un enfoque de procesamiento de datos en el que múltiples computadoras se utilizan en conjunto para realizar tareas de cómputo complejas de manera coordinada y en paralelo. En lugar de tener una sola computadora realizando todos los cálculos, la carga de trabajo se distribuye entre muchas computadoras que trabajan en paralelo para resolver el problema más rápidamente.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{ds.png}
+    \caption{Sistema Distribuido}
+    \label{fig:etiqueta}
+  \end{figure}
 
   Este enfoque es particularmente útil para resolver problemas que requieren grandes cantidades de datos o cálculos intensivos, como la simulación de sistemas complejos, el procesamiento de imágenes y video, y la modelización de sistemas físicos o biológicos.
 
@@ -110,20 +117,34 @@
 
   \textbf{SLURM (Simple Linux Utility for Resource Management)}
 
-  SLURM es un sistema de gestión de recursos de código abierto para clústeres de computadoras de alto rendimiento (HPC) en entornos de sistemas distribuidos. SLURM es utilizado por numerosas instituciones académicas, gubernamentales y comerciales para gestionar y programar trabajos de computación en clústeres de Linux de diferentes tamaños, desde pequeños clústeres universitarios hasta grandes supercomputadoras.
+  SLURM es un sistema de gestión de recursos de código abierto para clústeres de computadoras de alto rendimiento (HPC) en entornos de sistemas distribuidos. SLURM es utilizado por numerosas instituciones académicas, gubernamentales y comerciales para gestionar y programar trabajos de computación en clústeres de Linux de diferentes tamaños, desde pequeños clústeres universitarios hasta grandes supercomputadoras. \cite{DEF-SLURM}
 
-  Este gestor de cola de tareas se centra en la gestión de tareas de procesamiento de alta velocidad y de alto rendimiento, como la simulación, la modelización, la genómica, la bioinformática, la física y la ingeniería. Permite la ejecución eficiente de trabajos paralelos y distribuidos en clústeres de HPC y utiliza un enfoque modular que permite una configuración personalizada para satisfacer las necesidades específicas de cada clúster.
+  Este gestor de cola de tareas se centra en la gestión de tareas de procesamiento de alta velocidad y de alto rendimiento, como la simulación, la modelización, la genómica, la bioinformática, la física y la ingeniería. Permite la ejecución eficiente de trabajos paralelos y distribuidos en clústeres de HPC y utiliza un enfoque modular que permite una configuración personalizada para satisfacer las necesidades específicas de cada clúster. 
 
-  SLURM utiliza un modelo de cola de trabajos para administrar y priorizar trabajos en el clúster. Los trabajos se envían a la cola y se programan automáticamente para ejecutarse en los nodos del clúster disponibles según las especificaciones del usuario. SLURM también proporciona herramientas para la monitorización del clúster, la gestión de usuarios y grupos, la gestión de recursos y el seguimiento del estado de los trabajos en ejecución.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{as.png}
+    \caption{Arquitectura SLURM}
+    \label{fig:etiqueta}
+  \end{figure}
+
+  SLURM utiliza un modelo de cola de trabajos para administrar y priorizar trabajos en el clúster. Los trabajos se envían a la cola y se programan automáticamente para ejecutarse en los nodos del clúster disponibles según las especificaciones del usuario. SLURM también proporciona herramientas para la monitorización del clúster, la gestión de usuarios y grupos, la gestión de recursos y el seguimiento del estado de los trabajos en ejecución.\cite{DOC-SLURM}
   \vspace{3mm}
 
   \textbf{HTCondor (High Throughput Computing Condor)}
   
-  HTCondor es un sistema de software de código abierto que se utiliza para la gestión y programación de trabajos de alta capacidad en entornos de computación de alto rendimiento. Este sistema permite la utilización efectiva de la potencia de cálculo de máquinas conectadas en una red, ya sea un único clúster, un conjunto de clústeres en un campus, recursos en la nube independientes o unidos temporalmente a un clúster local, o redes internacionales.
+  HTCondor es un sistema de software de código abierto que se utiliza para la gestión y programación de trabajos de alta capacidad en entornos de computación de alto rendimiento. Este sistema permite la utilización efectiva de la potencia de cálculo de máquinas conectadas en una red, ya sea un único clúster, un conjunto de clústeres en un campus, recursos en la nube independientes o unidos temporalmente a un clúster local, o redes internacionales. \cite{DOC-HTCONDOR}
 
-  HTCondor es conocido por su capacidad para gestionar sistemas heterogéneos y distribuidos, lo que lo hace especialmente adecuado para entornos en los que se utilizan diferentes sistemas operativos y arquitecturas de hardware. Se utiliza en muchos campos, incluyendo la investigación académica, la física, la ingeniería, la biología y la industria.
+  HTCondor es conocido por su capacidad para gestionar sistemas heterogéneos y distribuidos, lo que lo hace especialmente adecuado para entornos en los que se utilizan diferentes sistemas operativos y arquitecturas de hardware. Se utiliza en muchos campos, incluyendo la investigación académica, la física, la ingeniería, la biología y la industria. 
 
-  Este sistema utiliza un modelo de cola de trabajos que permite a los usuarios enviar trabajos a la cola y programarlos para que se ejecuten en el momento adecuado y en los nodos adecuados del clúster. Además, proporciona herramientas para la monitorización del clúster, la gestión de usuarios y grupos, la gestión de recursos y el seguimiento del estado de los trabajos en ejecución.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{ah.png}
+    \caption{Arquitectura centralizada del entorno Condor.}
+    \label{fig:etiqueta}
+  \end{figure}
+
+  Este sistema utiliza un modelo de cola de trabajos que permite a los usuarios enviar trabajos a la cola y programarlos para que se ejecuten en el momento adecuado y en los nodos adecuados del clúster. Además, proporciona herramientas para la monitorización del clúster, la gestión de usuarios y grupos, la gestión de recursos y el seguimiento del estado de los trabajos en ejecución. \cite{DEF-HTCONDOR}
 
   \subsubsection{1.4.3 Computación distribuida en proyectos similares}
 
