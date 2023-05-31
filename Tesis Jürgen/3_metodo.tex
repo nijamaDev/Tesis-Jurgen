@@ -4,11 +4,11 @@
     \mylinespacing
   \end{tightcenter}
 
-  En este capítulo se describen los métodos utilizados para el diseño y
-  desarrollo del servicio de computación, así como el plan para su
-  implementación.
+  En este capítulo se describen los métodos utilizados para el diseño y desarrollo del servicio de computación, así como el plan para su implementación.
 
   \subsection{3.1 Resultados esperados}
+
+  En la siguiente tabla se muestran los logros proyectados para cada uno de los objetivos específicos estipulados en el marco de la tesis.
 
   \begin{table}[h]
     \centering
@@ -41,7 +41,8 @@
     \label{table:table2}
   \end{table}
 
-  \subsection{3.2 Escogiendo tecnologías a utilizar}
+  \subsection{3.2 Tecnologías y aprovechamiento de espacios}
+  \label{chap:3.2}
   En esta sección se presentan las diversas especificaciones tecnológicas
   seleccionadas para el proyecto en cuestión.
 
@@ -219,7 +220,11 @@
   Podman es una herramienta de código abierto y se desarrolla como parte del
   proyecto de código abierto de la comunidad de Red Hat. \cite{RHEL-podman-1}
 
-  \subsubsection{3.2.4 Wolfram Mathematica}
+  \subsubsection{3.2.4 Sala de cómputo Jürgen Tischer}
+
+  La sala de cómputo es un lugar principalmente utilizado para impartir clases, pero también podría ser utilizada en los espacios libres para llevar a cabo tareas de cómputo distribuido. Es importante tener en cuenta que, debido a que la sala de cómputo es un espacio compartido, es necesario coordinar con los demás usuarios para evitar conflictos y asegurarse de que todos tengan acceso al equipo y los recursos necesarios.
+
+  \textbf{Wolfram Mathematica}
 
   En el marco de este proyecto, se llevará a cabo una utilización efectiva de
   las licencias que actualmente se encuentran disponibles en la universidad. Se
@@ -257,12 +262,25 @@
   GPUs, para una ejecución más rápida. Automatiza la coordinación y gestión de
   procesos sin necesidad de cambios en el código. \cite{Wolfram-grid-1}
 
-  \subsubsection{3.2.5 SLURM}
+  \subsubsection{3.2.5 Clúster Bochica}
 
-  Como se ha mencionado anteriormente SLURM (acrónimo de Simple Linux Utility
-  for Resource Management) es un sistema de gestión de recursos utilizado en
-  entornos de computación de alto rendimiento (HPC). Algunas de las razones por
-  las que se escoge Slurm para la gestión de recursos son:
+  El clúster Bochica es un espacio que cuenta con recursos informáticos, los cuales se planean aprovechar en el marco de esta tesis para llevar a cabo tareas de cómputo general y distribuido. Es importante destacar que, debido a su capacidad, este clúster podría permanecer activo para el uso remoto de usuarios de la universidad que soliciten acceso, siempre y cuando se coordinen las tareas y se respeten los recursos disponibles en el mismo.
+
+  En el clúster Bochica, se planea aprovechar los recursos mediante la implementación conjunta de dos tecnologías: Slurm y JupyterHub. La combinación de estas dos herramientas permitirá a los usuarios del clúster ejecutar trabajos de cómputo de manera eficiente, al mismo tiempo que garantiza la seguridad y el control de acceso a los recursos.
+
+  \textbf{SLURM}
+
+  Como se ha mencionado anteriormente SLURM (acrónimo de Simple Linux Utility for Resource Management) es un sistema de gestión de recursos utilizado en entornos de computación de alto rendimiento (HPC). 
+  
+  \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.8\textwidth]{slurm.png}
+      \caption{Configuración SLURM}
+      \label{fig:etiqueta}
+    \end{figure}
+  
+  Algunas de las razones por las que se escoge Slurm para la gestión de recursos son:\cite{RHEL-SLURM-1}
+
 
   \begin{enumerate}
     \item Escalabilidad: Slurm es altamente escalable y puede manejar
@@ -288,28 +306,24 @@
 
   Se anticipa que la implementación y utilización de Slurm resultará ser
   menos compleja que la de HTCondor, lo que confiere una mayor accesibilidad a la
-  comunidad universitaria. \cite{RHEL-SLURM-1}
+  comunidad universitaria.
 
-  \subsubsection{3.2.6 Jupyterhub}
+  \textbf{Jupyterhub}
 
-  En el marco de este proyecto, se ha contemplado la utilización de
-  JupyterHub como plataforma de acceso a los recursos computacionales, lo que
-  permitirá a los usuarios disfrutar de una interfaz sencilla, centralizada y
-  automatizada.
+  En el marco de este proyecto, se ha contemplado la utilización de JupyterHub como plataforma de acceso a los recursos computacionales, lo que permitirá a los usuarios disfrutar de una interfaz sencilla, centralizada y automatizada.
 
-  JupyterHub es una plataforma sumamente versátil que se presta de manera
-  excepcional para la gestión y ejecución simultánea de diversas instancias de
-  Jupyter Notebook. Esta herramienta, por tanto, representa una alternativa
-  idónea para contextos educativos o de investigación en los que varios usuarios
-  necesitan emplear Jupyter Notebook de forma paralela.
+ JupyterHub es una plataforma sumamente versátil que se presta de manera excepcional para la gestión y ejecución simultánea de diversas instancias de Jupyter Notebook. Esta herramienta, por tanto, representa una alternativa idónea para contextos educativos o de investigación en los que varios usuarios necesitan emplear Jupyter Notebook de forma paralela.
 
-  Al ejecutarse a través de un servidor central, el software de JupyterHub
-  permite a los usuarios iniciar y detener sus sesiones de Jupyter Notebook de
-  manera independiente. De esta manera, cada usuario dispone de su propio espacio
-  de trabajo seguro y aislado en el que puede generar, llevar a cabo y compartir
-  sus cuadernos de Jupyter, al tiempo que ofrece a los administradores de sistema
-  un control riguroso del acceso y la seguridad de las múltiples instancias que
-  se ejecutan.
+  \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.7\textwidth]{hub.jpeg}
+      \caption{Configuración JupyterHub}
+      \label{fig:etiqueta}
+    \end{figure}
+
+    Al ejecutarse a través de un servidor central, el software de JupyterHub permite a los usuarios iniciar y detener sus sesiones de Jupyter Notebook de manera independiente. De esta manera, cada usuario dispone de su propio espacio de trabajo seguro y aislado en el que puede generar, llevar a cabo y compartir sus cuadernos de Jupyter, al tiempo que ofrece a los administradores de sistema un control riguroso del acceso y la seguridad de las múltiples instancias que se ejecutan.
+
+    Con Slurm y JupyterHub, los usuarios del clúster podrán aprovechar al máximo los recursos disponibles y trabajar de manera más eficiente y colaborativa.
 
   \mylinespacing
   \mylinespacing

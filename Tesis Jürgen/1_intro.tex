@@ -4,137 +4,60 @@
     \mylinespacing
   \end{tightcenter}
 
-  El objetivo de la tesis presentada es maximizar la utilización de los
-  recursos disponibles en el clúster Bochica y la sala de cómputo Jürgen Tischer
-  del departamento de Matemáticas de la Universidad del Valle. A pesar de contar
-  con una cantidad considerable de medios computacionales, estos recursos no
-  están siendo utilizados de manera óptima. Para abordar este problema, se
-  propone una metodología que consiste en la implementación de un gestor de cola
-  de tareas con capacidades de paralelización, lo que permitirá una utilización
-  más eficiente y efectiva de los recursos en investigaciones matemáticas.
+  El objetivo de la tesis presentada es maximizar la utilización de los recursos disponibles en el clúster Bochica y la sala de cómputo Jürgen Tischer del departamento de Matemáticas de la Universidad del Valle. A pesar de contar con una cantidad considerable de medios computacionales, estos recursos no están siendo utilizados de manera óptima. Para abordar este problema, se propone una metodología que consiste en la implementación de un gestor de cola de tareas con capacidades de paralelización, lo que permitirá una utilización más eficiente y efectiva de los recursos en investigaciones matemáticas.
 
-  Para alcanzar este objetivo, se propone utilizar sistemas distribuidos como
-  estrategia para aprovechar al máximo los recursos disponibles. Estos sistemas
-  permiten la paralelización de tareas y la distribución de la carga de trabajo
-  entre varios nodos o dispositivos, lo que implica la posibilidad de aprovechar
-  la capacidad total de cómputo de los recursos disponibles. Además, estos
-  sistemas ofrecen una mayor flexibilidad y escalabilidad en el uso de los
-  recursos, lo que resulta esencial en un entorno de investigación matemática
-  donde las necesidades de cómputo pueden variar significativamente.
+  Para alcanzar este objetivo, se propone utilizar sistemas distribuidos como estrategia para aprovechar al máximo los recursos disponibles. Estos sistemas permiten la paralelización de tareas y la distribución de la carga de trabajo entre varios nodos o dispositivos, lo que implica la posibilidad de aprovechar la capacidad total de cómputo de los recursos disponibles. Además, estos sistemas ofrecen una mayor flexibilidad y escalabilidad en el uso de los recursos, lo que resulta esencial en un entorno de investigación matemática donde las necesidades de cómputo pueden variar significativamente.
+  
+  Se realizará un análisis de diversos programas informáticos en esta tesis con el fin de proponer una implementación específica de un sistema distribuido que permita un mayor rendimiento y eficiencia en comparación con otros métodos existentes. Además, se evaluará el desempeño del sistema propuesto en relación con otros métodos, para determinar su efectividad en la optimización del uso de los recursos disponibles en el clúster Bochica y la sala de computación Jürgen Tischer.
 
-  Se realizará un análisis de diversos programas informáticos en esta tesis con
-  el fin de proponer una implementación específica de un sistema distribuido que
-  permita un mayor rendimiento y eficiencia en comparación con otros métodos
-  existentes. Además, se evaluará el desempeño del sistema propuesto en relación
-  con otros métodos, para determinar su efectividad en la optimización del uso de
-  los recursos disponibles en el clúster Bochica y la sala de computación Jürgen
-  Tischer.
-
-  \subsection{1.1 Planeamiento del problema}
+  \subsection{1.1 Planteamiento del problema}
 
   \textbf{Descripción del problema}
 
-  La falta de acceso a capacidades computacionales adecuadas está limitando la
-  capacidad de los trabajos relacionados con la investigación, análisis de datos
-  y simulación de procesos en el campo de la Ciencias en la Universidad del
-  Valle. Esto se ha reflejado en un enfoque predominantemente teórico en lugar de
-  computacionalmente intenso en estos trabajos de investigación. El Departamento
-  de Matemáticas identifica esta limitación como un problema y ve la necesidad de
-  acceder a recursos computacionales más potentes para poder llevar a cabo
-  cálculos matemáticos a gran escala con fines investigativos.
+  La falta de acceso a capacidades computacionales adecuadas está limitando la capacidad de los trabajos relacionados con la investigación, análisis de datos y simulación de procesos en el campo de la Ciencias en la Universidad del Valle. Esto se ha reflejado en un enfoque predominantemente teórico en lugar de computacionalmente intenso en estos trabajos de investigación. El Departamento de Matemáticas identifica esta limitación como un problema y ve la necesidad de acceder a recursos computacionales más potentes para poder llevar a cabo cálculos matemáticos a gran escala con fines investigativos.
 
   \textbf{Formulación del problema}
 
-  ¿Cómo podrían satisfacerse las demandas de cómputo requeridas para la
-  investigación matemática utilizando los recursos disponibles de manera
-  eficiente? ¿Cómo se podría facilitar el acceso y uso de estos recursos para que
-  puedan ser utilizados por la comunidad universitaria sin necesidad de
-  conocimientos técnicos avanzados?
+  ¿Cómo podrían satisfacerse las demandas de cómputo requeridas para la investigación matemática utilizando los recursos disponibles de manera eficiente?
+  ¿Cómo se podría facilitar el acceso y uso de estos recursos para que puedan ser utilizados por la comunidad universitaria sin necesidad de conocimientos técnicos avanzados?
 
   \subsection{1.2 Justificación del problema}
 
   \textbf{Justificación Académica}
 
-  La posibilidad de contar con una capacidad de procesamiento a gran escala con
-  capacidades de paralelización representa una oportunidad para ampliar el
-  alcance de la investigación científica en la Universidad, no solo en el ámbito
-  de las matemáticas sino también en otras disciplinas científicas.
+  La posibilidad de contar con una capacidad de procesamiento a gran escala con capacidades de paralelización representa una oportunidad para ampliar el alcance de la investigación científica en la Universidad, no solo en el ámbito de las matemáticas sino también en otras disciplinas científicas.
 
   \textbf{Justificación Económica}
 
-  Aunque existen opciones similares a las propuestas en este trabajo, como
-  servicios de computación en la nube, suelen carecer de accesibilidad económica
-  para estudiantes y profesores investigadores. En este sentido, el presente
-  proyecto tiene como objetivo aprovechar recursos subutilizados dentro de la
-  Universidad del Valle, con el fin de maximizar su potencial y hacerlos
-  accesibles para la comunidad universitaria, ahorrando así en la inversión de
-  nuevos equipos y recursos.
+  Aunque existen opciones similares a las propuestas en este trabajo, como servicios de computación en la nube, suelen carecer de accesibilidad económica para estudiantes y profesores investigadores. En este sentido, el presente proyecto tiene como objetivo aprovechar recursos subutilizados dentro de la Universidad del Valle, con el fin de maximizar su potencial y hacerlos accesibles para la comunidad universitaria, ahorrando así en la inversión de nuevos equipos y recursos.
 
   \textbf{Justificación Social}
 
-  La disponibilidad de un recurso propio y de bajo costo contribuiría a la
-  democratización del acceso a plataformas de alto rendimiento o masivamente
-  paralelas, lo que podría aumentar la inclusión de estudiantes, profesores e
-  investigadores de diferentes disciplinas en el ámbito de la investigación y el
-  desarrollo científico.
+  La disponibilidad de un recurso propio y de bajo costo contribuiría a la democratización del acceso a plataformas de alto rendimiento o masivamente paralelas, lo que podría aumentar la inclusión de estudiantes, profesores e investigadores de diferentes disciplinas en el ámbito de la investigación y el desarrollo científico.
 
   \subsection{1.3 Objetivos}
 
   \textbf{Objetivo general}
 
-  La presente tesis tiene como objetivo desarrollar un servicio de computación
-  con capacidades de paralelización, el cual estará disponible para la comunidad
-  universitaria y se enfocará en apoyar la investigación en el ámbito académico.
-  Para lograr esta meta, se propone aprovechar los recursos existentes en el
-  Departamento de Matemáticas de la Universidad del Valle. Este servicio busca
-  optimizar el uso de los recursos informáticos y permitir una mayor eficiencia
-  en el procesamiento de datos, mejorando así las posibilidades de investigación
-  y contribuyendo al avance de la comunidad académica en general.
+  La presente tesis tiene como objetivo desarrollar un servicio de computación con capacidades de paralelización, el cual estará disponible para la comunidad universitaria y se enfocará en apoyar la investigación en el ámbito académico. Para lograr esta meta, se propone aprovechar recursos existentes en el Departamento de Matemáticas de la Universidad del Valle. Este servicio busca optimizar el uso de los recursos informáticos mediante el uso de paralelización para permitir una mayor capacidad en el procesamiento de datos, mejorando así las posibilidades de investigación y contribuyendo al avance de la comunidad académica en general.
 
   \textbf{Objetivos específicos}
   \begin{enumerate}
-    \item Identificar recursos disponibles y necesidades investigativas.
-    \item Diseñar una solución que considere los requerimientos de los usuarios
-          y aproveche las capacidades de los recursos computacionales mediante la
-          implementación de un gestor de cola de tareas.
-    \item Llevar a cabo la instalación, documentación y puesta a punto de
-          herramientas que apoyen los procesos de investigación y docencia en el área de
-          matemáticas, facilitando el uso del servicio.
-    \item  Llevar a cabo pruebas de uso de la infraestructura y de las
-          aplicaciones desplegadas en este trabajo.\newline
+    \item Identificar los recursos disponibles y las necesidades de investigación. (Este objetivo se desarrolla durante el capítulo \nameref{chap:recursos-necesidades})
+    \item Diseñar una solución que considere los requerimientos de los usuarios y aproveche las capacidades de los recursos computacionales mediante la implementación de un gestor de cola de tareas. (Este objetivo se desarrolla durante el capítulo \nameref{chap:3.2})
+    \item  Realizar pruebas de rendimiento de la infraestructura y las aplicaciones implementadas.(Este objetivo se desarrolla durante el capítulo \nameref{chap:4.3}) 
+    \item Instalar, configurar y documentar herramientas para apoyar los procesos de investigación y enseñanza en matemáticas, haciendo fácil el uso del servicio.(Este objetivo se desarrolla durante el capítulo \nameref{chap:4.4})\newline
   \end{enumerate}
 
   \subsection{1.4 Estado del arte}
 
-  Desde sus orígenes, la informática y la computación han estado íntimamente
-  relacionadas con las matemáticas. En la actualidad, la capacidad para realizar
-  cálculos y análisis de datos a gran escala resulta fundamental en numerosos
-  campos de investigación científica. Sin embargo, en la Universidad del Valle se
-  ha identificado una limitación en el acceso a estas capacidades
-  computacionales, lo que ha ocasionado que los trabajos de investigación se
-  centren principalmente en enfoques teóricos, en lugar de los enfoques
-  computacionalmente intensivos. Es importante señalar que este problema no solo
-  afecta al Departamento de Matemáticas, sino también a otras áreas de
-  investigación de la universidad.
+  Desde sus orígenes, la informática y la computación han estado íntimamente relacionadas con las matemáticas. En la actualidad, la capacidad para realizar cálculos y análisis de datos a gran escala resulta fundamental en numerosos campos de investigación científica. Sin embargo, en la Universidad del Valle se ha identificado una limitación en el acceso a estas capacidades computacionales, lo que ha ocasionado que los trabajos de investigación se centren principalmente en enfoques teóricos, en lugar de los enfoques computacionalmente intensivos. Es importante señalar que este problema no solo afecta al Departamento de Matemáticas, sino también a otras áreas de investigación de la universidad.
 
-  Para abordar esta problemática, resulta crucial considerar el estado actual
-  del arte en cuanto a la disponibilidad de recursos informáticos para la
-  investigación. Es importante aclarar que los recursos informáticos a considerar
-  en el análisis tienen que ver con software, ya que este es esencial para llevar
-  a cabo cálculos y análisis de datos a gran escala. Es necesario evaluar
-  cuidadosamente las opciones existentes, teniendo en cuenta la viabilidad de
-  cada alternativa dentro del contexto de la Universidad del Valle.
+Para abordar esta problemática, resulta crucial considerar el estado actual del arte en cuanto a la disponibilidad de recursos informáticos para la investigación. Es importante aclarar que los recursos informáticos a considerar en el análisis tienen que ver con software, ya que este es esencial para llevar a cabo cálculos y análisis de datos a gran escala. Es necesario evaluar cuidadosamente las opciones existentes, teniendo en cuenta la viabilidad de cada alternativa dentro del contexto de la Universidad del Valle. 
 
-  Adicionalmente, es de vital importancia indagar acerca de las mejores
-  prácticas y estrategias empleadas por otras instituciones y organizaciones para
-  abordar problemáticas similares. En este sentido, es posible analizar
-  experiencias exitosas en la implementación de soluciones informáticas efectivas
-  para la investigación.
+Adicionalmente, es de vital importancia indagar acerca de las mejores prácticas y estrategias empleadas por otras instituciones y organizaciones para abordar problemáticas similares. En este sentido, es posible analizar experiencias exitosas en la implementación de soluciones informáticas efectivas para la investigación.
 
-  En primer lugar, exploraremos el concepto de computación distribuida y,
-  posteriormente, analizaremos proyectos que emplean este enfoque con el fin de
-  alcanzar resultados similares a los objetivos que se persiguen en el presente
-  proyecto.
+En primer lugar, exploraremos el concepto de computación distribuida y, posteriormente, analizaremos proyectos que emplean este enfoque con el fin de alcanzar resultados similares a los objetivos que se persiguen en el presente proyecto.
 
   \subsubsection{1.4.1 Computación Distribuida}
 
@@ -266,7 +189,7 @@
 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{ah.png}
+    \includegraphics[width=0.5\textwidth]{ah.jpeg}
     \caption{Arquitectura centralizada del entorno Condor.}
     \label{fig:etiqueta}
   \end{figure}
@@ -330,7 +253,7 @@
   conjuntos con otros usuarios en todo el mundo. La infraestructura de PL-Grid se
   actualiza y se expande constantemente para satisfacer las necesidades
   cambiantes de la investigación científica y académica en Polonia y en el
-  extranjero.
+  extranjero. \cite{PL} \newline
 
   \textbf{BAF2 (Universidad de Bonn, Alemania)}
 
@@ -446,85 +369,29 @@
 
   \subsection{1.5 Propuesta de solución}
 
-  En la Universidad del Valle, actualmente no existe un recurso computacional
-  distribuido similar al que se propone en este estudio, al menos no en términos
-  de accesibilidad para la comunidad universitaria. Es decir, a pesar de que la
-  institución cuenta con ciertos recursos computacionales, estos no se encuentran
-  organizados y estructurados de tal manera que puedan ser utilizados de forma
-  distribuida por la comunidad académica. Esto representa una limitación
-  significativa en términos de acceso y aprovechamiento de los recursos
-  computacionales existentes en la universidad, lo que puede afectar el
-  desarrollo de actividades de investigación y docencia que requieran de alta
-  capacidad de procesamiento y almacenamiento de datos. Por esta razón, la
-  implementación de un recurso computacional distribuido como el propuesto en
-  este proyecto representa una solución innovadora y necesaria para abordar las
-  necesidades computacionales de la comunidad universitaria en la Universidad del
-  Valle.
+  En la Universidad del Valle, actualmente no existe un recurso computacional distribuido similar al que se propone en este estudio, al menos no en términos de accesibilidad para la comunidad universitaria. Es decir, a pesar de que la institución cuenta con ciertos recursos computacionales, estos no se encuentran organizados y estructurados de tal manera que puedan ser utilizados de forma distribuida por la comunidad académica. Esto representa una limitación significativa en términos de acceso y aprovechamiento de los recursos computacionales existentes en la universidad, lo que puede afectar el desarrollo de actividades de investigación y docencia que requieran de alta capacidad de procesamiento y almacenamiento de datos. Por esta razón, la implementación de un recurso computacional distribuido como el propuesto en este proyecto representa una solución innovadora y necesaria para abordar las necesidades computacionales de la comunidad universitaria en la Universidad del Valle.
 
-  Además, la disponibilidad de este recurso podría mejorar la colaboración y
-  la comunicación entre investigadores y estudiantes al facilitar el intercambio
-  de recursos y datos, y alentar la creación de nuevos proyectos
-  interdisciplinarios.
-
-  En consecuencia, la implementación de la solución propuesta tendría un
-  efecto positivo en el avance de la investigación y el desarrollo en la
-  universidad, lo que podría tener implicaciones en la sociedad en general a
-  través de la generación de nuevos conocimientos y tecnologías.
+  Además, la disponibilidad de este recurso podría mejorar la colaboración y la comunicación entre investigadores y estudiantes al facilitar el intercambio de recursos y datos, y alentar la creación de nuevos proyectos interdisciplinarios. 
+  
+  En consecuencia, la implementación de la solución propuesta tendría un efecto positivo en el avance de la investigación y el desarrollo en la universidad, lo que podría tener implicaciones en la sociedad en general a través de la generación de nuevos conocimientos y tecnologías.
 
   \subsubsection{1.5.1 Consideraciones A La Propuesta De Solución}
-  A partir de las limitaciones con los recursos existentes, las necesidades
-  anteriormente expresadas y la investigación realizada, se identifica que una
-  propuesta de solución debe contar con las siguientes características:
+  A partir de las limitaciones con los recursos existentes, las necesidades anteriormente expresadas y la investigación realizada, se identifica que una propuesta de solución debe contar con las siguientes características:
   \begin{itemize}
-    \item Sistema Operativo basado en Linux: Se propone utilizar un sistema
-          operativo basado en Linux debido a su estabilidad, seguridad y eficiencia en el
-          uso de recursos.
-    \item Licencias de software: se aprovecharán aquellas que ya se
-          encuentran en posesión de la universidad, en concreto, las correspondientes a
-          los programas Wolfram Mathematica y Matlab, siempre y cuando dicha institución
-          continúe sufragando los correspondientes pagos. El objetivo de esta medida es
-          evitar incurrir en costos adicionales que pudieran resultar innecesarios.
-    \item Software gratuito y de código abierto: Se dará preferencia al uso
-          de software gratuito y de código abierto para minimizar los costos y fomentar
-          la colaboración y la comunidad.
-    \item Gestor de cola de tareas: Se implementará un gestor de cola de
-          tareas con capacidades de paralelización para aprovechar al máximo los recursos
-          disponibles y aumentar la eficiencia en la realización de tareas.
-    \item Interfaz de usuario: Se debe implementar alguna interfaz de usuario
-          para que los usuarios puedan acceder a los recursos de manera fácil y eficiente
-          en el campus universitario.
-    \item Sistema de archivos compartidos: Se utilizará un sistema de
-          archivos compartidos entre las máquinas para facilitar el intercambio de datos
-          requeridos para la ejecución de tareas.
+    \item Sistema Operativo basado en Linux: Se propone utilizar un sistema operativo basado en Linux debido a su estabilidad, seguridad y eficiencia en el uso de recursos.
+    \item Licencias de software: se buscará el aprovechamiento de aquellas que ya se encuentran en posesión de la universidad, en concreto, las correspondientes Wolfram Alpha (Mathematica, MathLM y gridMathematica), siempre y cuando dicha institución continúe sufragando los correspondientes pagos. El objetivo de esta medida es evitar incurrir en costos adicionales que pudieran resultar innecesarios.
+    \item Software gratuito y de código abierto: Se dará preferencia al uso de software gratuito y de código abierto para minimizar los costos y fomentar la colaboración y la comunidad.
+    \item Gestor de cola de tareas: Se implementará un gestor de cola de tareas con capacidades de paralelización para aprovechar al máximo los recursos disponibles y aumentar la eficiencia en la realización de tareas.
+    \item Interfaz de usuario: Se debe implementar alguna interfaz de usuario para que los usuarios puedan acceder a los recursos de manera fácil y eficiente en el campus universitario.
+    \item Sistema de archivos compartidos: Se utilizará un sistema de archivos compartidos entre las máquinas para facilitar el intercambio de datos requeridos para la ejecución de tareas.
   \end{itemize}
-  Es importante destacar que la elección del sistema de gestión de cola de
-  tareas apropiado para un proyecto específico se ve influenciada por una serie
-  de factores que incluyen, entre otros, la naturaleza de las tareas a realizar,
-  la magnitud y la complejidad del sistema distribuido involucrado, la
-  disponibilidad de presupuesto y recursos. Por lo tanto, es necesario considerar
-  cuidadosamente cada uno de estos factores antes de tomar una decisión informada
-  sobre la elección del sistema de gestión de cola de tareas más adecuado para el
-  proyecto en cuestión.
+  Es importante destacar que la elección del sistema de gestión de cola de tareas apropiado para un proyecto específico se ve influenciada por una serie de factores que incluyen, entre otros, la naturaleza de las tareas a realizar, la magnitud y la complejidad del sistema distribuido involucrado, la disponibilidad de presupuesto y recursos. Por lo tanto, es necesario considerar cada uno de estos factores antes de tomar una decisión informada sobre la elección del sistema de gestión de cola de tareas más adecuado para el proyecto en cuestión.
 
-  En este caso específico, se ha optado por implementar SLURM como sistema de
-  gestión de trabajos debido a su amplia adopción, sencillez de implementación y
-  recomendación por parte del área de Matemática.
+En este caso específico, se ha optado por implementar SLURM como sistema de gestión de trabajos debido a su amplia adopción, sencillez de implementación y recomendación por parte de docentes del área de Matemática. Se anticipa que la implementación y utilización de Slurm resultará ser menos compleja que la de HTCondor, lo que confiere una mayor accesibilidad a la comunidad universitaria.
 
-  Para la implementación de la interfaz de usuario se ha seleccionado
-  Jupyterhub como plataforma, en virtud de su capacidad para ejecutar código de
-  múltiples lenguajes de programación, así como su capacidad para presentar dicha
-  funcionalidad en una interfaz de usuario intuitiva y accesible a través de
-  cualquier navegador web conectado a la red universitaria. La elección de
-  Jupyterhub se justifica por su flexibilidad y adaptabilidad a las necesidades
-  específicas del proyecto, así como por su capacidad para brindar una
-  experiencia de usuario óptima en términos de eficiencia y usabilidad.
+Para la implementación de la interfaz de usuario se ha seleccionado Jupyterhub como plataforma, en virtud de su capacidad para ejecutar código de múltiples lenguajes de programación, así como su capacidad para presentar dicha funcionalidad en una interfaz de usuario intuitiva y accesible a través de cualquier navegador web conectado a la red universitaria. La elección de Jupyterhub se justifica por su flexibilidad y adaptabilidad a las necesidades específicas del proyecto, así como por su capacidad para brindar una experiencia de usuario óptima en términos de eficiencia y usabilidad.
 
-  En el próximo capítulo, se profundizará en los aspectos del diseño y la
-  metodología utilizados para la presente solución. Se espera que mediante la
-  implementación de esta propuesta se logre mejorar de manera sustancial la
-  utilización de los recursos disponibles y aumentar la eficiencia en la
-  ejecución de las tareas, lo cual a su vez permitirá la creación de nuevas
-  oportunidades en el ámbito académico e investigativo de la universidad.
+En los próximos capítulos, se profundizará en los aspectos del diseño y la metodología utilizados para la presente solución. Se espera que mediante la implementación de esta propuesta se logre mejorar de manera sustancial la utilización de los recursos disponibles y aumentar la eficiencia en la ejecución de las tareas, lo cual a su vez permitirá la creación de nuevas oportunidades en el ámbito académico e investigativo de la universidad.
 
   \mylinespacing
   \mylinespacing

@@ -24,10 +24,7 @@
 
   \subsection{4.2 Pruebas de control}
 
-  En el proceso de verificar el correcto funcionamiento de los computadores y
-  las
-  integraciones, se emplean diversas herramientas, como las presentadas a
-  continuación.
+  En el proceso de verificar el correcto funcionamiento de los computadores y las integraciones, se emplean diversas herramientas, como las presentadas a continuación.
 
   \subsubsection {4.2.1 Comprobar conectividad básica con pdsh}
 
@@ -216,9 +213,50 @@
   Para activar el entorno durante la ejecución de cada nodo, es más
   conveniente utilizar un archivo de sbatch.
 
-  \subsection{4.3 Pruebas de eficiencia}
+  \subsection{4.3 Pruebas de eficiencia}  \label{chap:4.3}
 
-  \subsection{4.4 Automatización - Facilitar el uso}
+  Se prepararon y realizaron dos pruebas para medir la eficiencia de los sistemas implementados.
+
+      \textbf{Prueba de gridMathematica}
+
+      Para probar el rendimiento en singular, multi-proceso y multi-máquina utilizamos el código de uno de los proyectos que se beneficiaron con la implementación de esta tesis (ver Capítulo 5, Influencia en proyectos destacados, para más detalles).
+
+      De este código nos interesaremos por una parte en particular en donde existe una variable de puntos que afectan a un problema lineal, el cual resulta óptimo para probar el rendimiento de los sistemas.
+
+      Preprint del proyecto mencionado y código de GitHub a utilizar. \cite{preprint} \cite{git}
+
+      En los resultados mostrados solo se considera el tiempo de ejecución del cálculo realizado, no se toma en cuenta el tiempo que tarda en conectar los nodos ni en preparar las variables.
+
+      Para las pruebas utilizamos diferentes escenarios, un DELL PRECISION T3610 equipado con Intel Xeon E5-1620 v2 @ 3.9GHz (4 núcleos físicos, 8 hilos de ejecución), lo comparamos con un HP Z1 equipado con un Intel i9-10900 @ 5.2 GHz para ver la diferencia de velocidad al escalar verticalmente una máquina y luego con el mismo Intel Xeon pero con 10 de esos.
+
+      \textbf{Resultados Mathematica}
+
+      Procesadores utilizados : 
+
+      Xeon = Xeon E5-1620 v2 @ 3.9GHz 
+
+      i9 = Intel i9-10900 @ 5.2 GHz
+
+      \begin{table}[h]
+            \centering
+            \begin{tabular}{c|c|c|c|c}
+            \hline
+            \textbf{n} & \textbf{Procesador por Nodo} & \textbf{Nodos} & \textbf{Núcleos por Nodo} & \textbf{Time(s)} \\
+            \hline
+            Fila 1 & Valor 1 & Valor 2 & Valor 3 \\
+            \hline
+            Fila 2 & Valor 1 & Valor 2 & Valor 3 \\
+            \hline
+            Fila 3 & Valor 1 & Valor 2 & Valor 3 \\
+            \hline
+            \end{tabular}
+            \caption{Resultados Mathematica}
+            \label{table:table1}
+            \end{table}
+            
+
+  \subsection{4.4 Automatización - Facilitar el uso}   \label{chap:4.4}
+
 
   \subsubsection{4.4.1 Scripts}
 
