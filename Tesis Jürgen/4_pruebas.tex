@@ -237,26 +237,68 @@
 
       i9 = Intel i9-10900 @ 5.2 GHz
 
-      \begin{table}[h]
+      \begin{figure}[h]
             \centering
-            \begin{tabular}{c|c|c|c|c}
-            \hline
-            \textbf{n} & \textbf{Procesador por Nodo} & \textbf{Nodos} & \textbf{Núcleos por Nodo} & \textbf{Time(s)} \\
-            \hline
-            Fila 1 & Valor 1 & Valor 2 & Valor 3 \\
-            \hline
-            Fila 2 & Valor 1 & Valor 2 & Valor 3 \\
-            \hline
-            Fila 3 & Valor 1 & Valor 2 & Valor 3 \\
-            \hline
-            \end{tabular}
+            \includegraphics[width=0.5\textwidth]{tab1.png}
             \caption{Resultados Mathematica}
-            \label{table:table1}
-            \end{table}
-            
+            \label{fig:etiqueta}
+          \end{figure}
+
+      En la figura 10 del anexo 2 podemos observar
+
+      n=500
+
+      \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{tab2.png}
+            \caption{Resultados Mathematica}
+            \label{fig:etiqueta}
+      \end{figure}
+
+      En la siguiente gráfica se muestra la mejora porcentual en la eficiencia de generación de puntos por segundo.
+
+      \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{tab3.png}
+            \caption{Resultados Mathematica}
+            \label{fig:etiqueta}
+      \end{figure}
+
+\textbf{Slurm - The Linpack Benchmark para sistemas distribuidos}
+
+El benchmark Linpack es una prueba de rendimiento computacional que mide la capacidad de cálculo y eficiencia de un sistema informático en términos de velocidad y procesamiento numérico. Fue diseñado por Jack Dongarra en los años 70 en el Laboratorio Nacional de Oak Ridge, y se ha convertido en un estándar en el campo de la supercomputación y el rendimiento de los sistemas informáticos. Esta prueba utiliza la resolución de un sistema complejo de ecuaciones lineales como criterio. \cite{linpack}, \cite{hpl-linpack}, \cite{faq-linpack}
+
+Con esta prueba, es posible evaluar el rendimiento y la capacidad de procesamiento de diferentes configuraciones computacionales y compararlos. En este proyecto, se utilizó Slurm para ejecutar la prueba en sistemas distribuidos. Se realizaron pruebas en diferentes configuraciones de nodos y núcleos por nodo, lo que permitió medir la eficiencia y el rendimiento en distintos escenarios. Los resultados se registraron para una evaluación detallada.
+
+Para configurar adecuadamente la prueba, se utilizó una herramienta web que sugiere una configuración según la cantidad de nodos, la cantidad de tareas por nodo y la cantidad de memoria. \cite{tune-hpl-dat-file}
+
+Durante la realización de esta investigación, se presentaron circunstancias imprevistas que afectaron el desarrollo de las pruebas de rendimiento en el entorno del clúster Bochica. Se detectaron problemas de mantenimiento en dicho entorno que comprometían su disponibilidad y estabilidad, poniendo en riesgo la precisión y confiabilidad de los resultados obtenidos.
+
+En vista de esta situación, se tomó la decisión de replicar el entorno de slurm utilizando los 30 computadores Xeon E5-1620 v2 de la sala, mismos computadores de la prueba de Mathematica, en donde se procedió a ejecutar las pruebas de rendimiento. Aunque esta medida no estaba contemplada originalmente en el plan de investigación, se consideró como la mejor alternativa disponible para asegurar la integridad de las pruebas y la obtención de resultados fiables.
+
+Cabe destacar que se tomaron todas las medidas necesarias para garantizar que el entorno secundario contara con una configuración similar al entorno Bochica, asimismo se minimizaron las diferencias de entorno a fin de mantener la consistencia en las pruebas realizadas.
+
+\textbf{Resultados Slurm}
+
+\begin{figure}[h]
+      \centering
+      \includegraphics[width=0.5\textwidth]{a.png}
+      \caption{Resultados Slurm}
+      \label{fig:etiqueta}
+\end{figure}
+
+En el contexto del benchmark LINPACK, los datos obtenidos describen los resultados de ejecutar el benchmark en diferentes configuraciones de nodos y tareas por nodo.
+
+\begin{itemize}
+      \item "Nodos": representa el número de nodos utilizados en la ejecución del benchmark.
+      \item "Tareas por nodo": indica el número de tareas (hilos de ejecución) asignadas a cada nodo.
+      \item "Tiempo": es el tiempo en segundos que tardó el sistema en ejecutar el benchmark LINPACK en la configuración dada.
+      \item "Gflops": representa el rendimiento medido en giga operaciones de punto flotante por segundo (GFLOPS) alcanzado durante la ejecución del benchmark.
+\end{itemize}
+
+En general, estos datos proporcionan una idea de cómo el rendimiento del sistema varía con respecto al número de nodos y tareas por nodo. A medida que se agregan más nodos y tareas, en general, el rendimiento mejora, aunque no de manera lineal debido a la comunicación y la sobrecarga asociadas con la coordinación entre nodos.
 
   \subsection{4.4 Automatización - Facilitar el uso}   \label{chap:4.4}
-
 
   \subsubsection{4.4.1 Scripts}
 
@@ -283,7 +325,7 @@
   con menor esfuerzo. Además, estos scripts son altamente escalables y pueden
   ser
   adaptados para su uso en proyectos futuros, lo que representa una inversión a
-  largo plazo en la mejora de la eficiencia y la calidad del trabajo.
+  largo plazo en la mejora de la eficiencia y la calidad del trabajo.\cite{github}
 
   \subsection{4.5 Problemas encontrados}
   En el desarrollo de este proyecto, se presentaron problemas tanto previstos
