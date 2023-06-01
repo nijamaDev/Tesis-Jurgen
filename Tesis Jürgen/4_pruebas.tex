@@ -39,6 +39,43 @@
   argumento \code{uptime} en vez de \code{hostname}, se puede obtener más
   información sobre el estado de cada nodo.
 
+  El resultado se ve de esta forma :
+
+  \definecolor{codebackground}{RGB}{240,240,240}
+  % Color de fondo del código
+  \definecolor{codecomment}{RGB}{100,100,100}
+  % Color de los comentarios
+  \definecolor{codekeyword}{RGB}{0,0,255}
+  % Color de las palabras clave
+  \definecolor{codestring}{RGB}{163,21,21}
+  % Color de las cadenas de texto
+
+  \lstset{
+    backgroundcolor=\color{codebackground},
+    commentstyle=\color{codecomment},
+    keywordstyle=\color{codekeyword},
+    stringstyle=\color{codestring},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    frame=single,
+    numberstyle=\tiny\color{codecomment},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    rulecolor=\color{codebackground}
+  }
+  \begin{lstlisting}[language=C]
+      $ xeon "hostname"
+      C4: C4
+      E3: E3
+      A2: A2
+      ...
+      B5: B5
+  \end{lstlisting}
+
   \subsubsection {4.2.2 Comprobar funcionamiento en Mathematica}
 
   En Mathematica es fácil comprobar que la configuración paralela funciona
@@ -50,48 +87,48 @@
   \textit{RemoteKernel
     Objects}, que es un configurador automático que, por defecto, solo usa los
   kernels locales e ignora toda la configuración que se le coloca. Los kernels
-  configurados se muestran en la Figura \ref{fig:etiqueta}.  \newline  \newline
+  configurados se muestran en la Figura \ref{fig:etiqueta1}.  \newline  \newline
 
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{mat.png}
     \caption{Configuración paralela en Mathematica}
-    \label{fig:etiqueta}
+    \label{fig:etiqueta1}
   \end{figure}
 
   Una vez que se haya completado esta configuración, podrás abrir un nuevo
   cuaderno (notebook) y escribir la siguiente instrucción: \code{LaunchKernels[
       ]}. De esta manera, la aplicación tratará de conectarse con los kernels
   configurados en cada nodo, tal como se muestra en la Figura
-  \ref{fig:etiqueta}
+  \ref{fig:etiqueta2}
 
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{mat1.png}
     \caption{Conexión de kernels y nodos}
-    \label{fig:etiqueta}
+    \label{fig:etiqueta2}
   \end{figure}
 
   En caso de que todo salga bien, se muestra una lista con todos los kernels
-  iniciados, como se indica en la Figura \ref{fig:etiqueta}
+  iniciados, como se indica en la Figura \ref{fig:etiqueta3}
 
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{mat4.png}
     \caption{Kenerls iniciados}
-    \label{fig:etiqueta}
+    \label{fig:etiqueta3}
   \end{figure}
 
   Si hay un error, Mathematica lo señalará. Normalmente el error incluirá
   información sobre el nodo que presenta problemas, así como una breve
   descripción del problema y posibles soluciones a aplicar, en la Figura
-  \ref{fig:etiqueta} se puede observa un error en Mathematica.
+  \ref{fig:etiqueta4} se puede observa un error en Mathematica.
 
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{mat3.png}
     \caption{Información de error}
-    \label{fig:etiqueta}
+    \label{fig:etiqueta4}
   \end{figure}
 
   \subsubsection {4.2.3 Comprobar funcionamiento en Slurm}
@@ -197,11 +234,18 @@
   adjunta en el apartado NFS.
 
   Para ejecutar el código, se debe utilizar el comando \code{srun -N10
-    /nfs/c-mpi-hello}.
+    /nfs/c-mpi-hello}.Esto asignará 10 nodos, cada uno con un hilo de proceso. El resultado tiene el siguiente formato :
 
-  \textbf{Resultados}
+    \begin{lstlisting}[language=C]
+      $ srun -N4 c-mpi-hello
+      Hello, World! from node bochica2, rank 2 out of 4 processors
+      Hello, World! from node bochica3, rank 3 out of 4 processors
+      Hello, World! from node bochica1, rank 1 out of 4     processors
+      Hello, World! from node bochica4, rank 4 out of 4 processors
+    \end{lstlisting}
 
   \textbf{Helloworld Paralelo con Python}
+
   Se puede lograr lo mismo utilizando Python. Se recomienda preparar un
   entorno utilizando conda o mamba en el NFS para que esté disponible para
   todos
@@ -210,9 +254,57 @@
   El entorno fue creado con el comando \code{conda create -p /nfs/anaconda
     anaconda mpi4py mpich}.
 
-  Para activar el entorno durante la ejecución de cada nodo, es más
-  conveniente utilizar un archivo de sbatch.
+    En el siguiente código se muestra un programa en Python utilizando mpi4py para imprimir Hello World
 
+    \begin{lstlisting}[language=python]
+      # py-mpi-hello.py
+      """
+      Parallel Hello World
+      """
+
+      from mpi4py import MPI
+      import sys
+      import getpass
+
+      size = MPI.COMM_WORLD.Get_size()
+      rank = MPI.COMM_WORLD.Get_rank()
+      name = MPI.Get_processor_name()
+      user = getpass.getuser()
+
+      sys.stdout.write(
+      "%s: Hello, World! I am process %d of %d on %s.\n"
+      % (user, rank+1, size, name))
+
+    \end{lstlisting}
+      
+    Para activar el entorno de conda durante la ejecución de cada nodo, es más conveniente utilizar un archivo de sbatch que directamente con srun como se muestra a continuación:
+
+    \begin{lstlisting}[language=python]
+      # py-mpi-hello.sbatch
+      #!/bin/sh
+      #SBATCH -o /nfs/sbatch-examples/helloworld/py-mpi-hello.out
+      #SBATCH --nodes=4
+      #SBATCH --ntasks-per-node=1
+
+      # Load conda commands from local installation
+      source /opt/conda/etc/profile.d/conda.sh
+
+      # Activate shared conda on nfs
+      conda activate /nfs/conda
+
+      # Run mpi example
+      srun python /nfs/sbatch-examples/helloworld/py-mpi-hello.py
+    \end{lstlisting}
+
+    Utilizamos \code{sbatch py-mpi-hello.sbatch} para ejecutar la prueba y verificar su funcionamiento. El resultado debe ser como se muestra a continuación:
+
+      \begin{lstlisting}[language=python]
+      estudiante: Hello, World! I am process 2 of 4 on bochica2.
+      estudiante: Hello, World! I am process 3 of 4 on bochica3.
+      estudiante: Hello, World! I am process 4 of 4 on bochica4.
+      estudiante: Hello, World! I am process 1 of 4 on bochica1. 
+      \end{lstlisting}
+      
   \subsection{4.3 Pruebas de eficiencia}  \label{chap:4.3}
 
   Se prepararon y realizaron dos pruebas para medir la eficiencia de los sistemas implementados.
