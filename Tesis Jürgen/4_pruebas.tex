@@ -8,19 +8,24 @@
 
   \textbf{Procedimiento}
 
-  \textbf{Anexo No.1: Instalación y configuración de los computadores de la
-    sala
-    de cómputo}
+  \textbf{Nota}: En el Anexo 1: Instalación y configuración de los computadores de la sala de cómputo Jürgen Tischer y Clúster Bochica del Departamento de Matemáticas de la Universidad del Valle, se detalla por completo la instalación y configuración que se llevó a cabo. Además, se detallan las herramientas disponibles y su utilidad.
 
-  En este documento se registra el proceso de instalación y configuración de
-  los
-  computadores de la sala de cómputo de Jürgen Tischer, Departamento de
-  Matemáticas, Universidad del Valle, Cali, Colombia. Además, se detallan las
-  herramientas disponibles y su utilidad.
+  \subsubsection{4.1.1 Instalación en Sala de Cómputo Jürgen Tischer}
 
-  El documento completo de instalación y configuración se encuentra en la
-  sección
-  de Anexos
+  \textbf{Procedimiento}
+
+  \begin{itemize}
+      \item Instalación de pcs
+      \item Configuración de NFS en el principal
+      \item Configuración de pcs (instalación de paquetes y demás)
+      \item Instalación de Mathematica y gridMathematica
+      \item Instalación nodos del clúster
+      \item Configuración de servidores y switch
+      \item Instalación conda
+      \item Instalación de Jupyterhub con componentes adicionales
+      \item Instalación y configuración de Slurm
+
+  \end{itemize}
 
   \subsection{4.2 Pruebas de control}
 
@@ -251,8 +256,8 @@
   todos
   los nodos involucrados. Además, el entorno debe contener el paquete
   \code{mpi4py}. En nuestro caso, utilizamos la implementación de \code{mpich}.
-  El entorno fue creado con el comando \code{conda create -p /nfs/anaconda
-    anaconda mpi4py mpich}.
+  El entorno fue creado con el comando \code{conda create -p /nfs/anaconda}
+    \code{anaconda mpi4py mpich}.
 
     En el siguiente código se muestra un programa en Python utilizando mpi4py para imprimir Hello World
 
