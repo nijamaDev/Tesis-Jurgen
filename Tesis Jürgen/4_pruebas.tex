@@ -6,26 +6,61 @@
 
   \subsection{4.1 Implementando tecnologías}
 
-  \textbf{Procedimiento}
-
-  \textbf{Nota}: En el Anexo 1: Instalación y configuración de los computadores de la sala de cómputo Jürgen Tischer y Clúster Bochica del Departamento de Matemáticas de la Universidad del Valle, se detalla por completo la instalación y configuración que se llevó a cabo. Además, se detallan las herramientas disponibles y su utilidad.
+  En esta sección se explica cómo se implementó la solución propuesta. Para hacerlo fácil de reinstalar, reconfigurar y estandarizar los sistemas, así como para instalar nuevos equipos que se adquieran después de que finalice este proyecto, se creó un manual de configuración que se incluye como Anexo 1 de este documento: \textit{Instalación y configuración de los recursos informáticos de la sala de cómputo Jürgen Tischer y Clúster Bochica del Departamento de Matemáticas de la Universidad del Valle}. La implementación de las tecnologías se llevó a cabo en varias etapas, las cuales se describen en detalle en dicho anexo. Por lo tanto, se hará referencia a este múltiples veces durante la presente sección. A continuación, se presenta una descripción general de cada etapa del proceso y en qué sección del anexo 1 se puede encontrar más información.
 
   \subsubsection{4.1.1 Instalación en Sala de Cómputo Jürgen Tischer}
 
-  \textbf{Procedimiento}
+  En la sala de cómputo, como se puede visualizar en el cuaddro \ref{table:table1} del \textit{capítulo 2.1 Recursos computacionales}, existen diversos equipos de cómputo con características y capacidades variadas, por lo que algunos equipos no fueron seleccionados para formar parte del sistema distribuido debido al bajo rendimiento que pueden proveer, el cual, causaría un efecto de cuello de botella como se podrá observar más adelante en el \textit{capítulo 4.3 Pruebas de eficiencia y rendimiento}, por lo que, aunque el sistema operativo, los paquetes base y aplicaciones fueron instalados por igual en todos los equipos, solo se configuraron para trabajar en paralelos los 30 DELL PRECISION T3610 junto con los HP Z1 y Z2 para un total de 33 equipos en el sistema distribuido.
 
-  \begin{itemize}
-      \item Instalación de pcs
-      \item Configuración de NFS en el principal
-      \item Configuración de pcs (instalación de paquetes y demás)
-      \item Instalación de Mathematica y gridMathematica
-      \item Instalación nodos del clúster
-      \item Configuración de servidores y switch
-      \item Instalación conda
-      \item Instalación de Jupyterhub con componentes adicionales
-      \item Instalación y configuración de Slurm
+  \textbf{Configuración nodo principal}
 
-  \end{itemize}
+  Para los propósitos de este proyecto se utilizó el HP Z2 como nodo principal
+
+En primer lugar, se procedió a configurar el equipo principal, en este caso el HP Z2, debido a su capacidad de almacenamiento adicional (2 TB). Esto resultará de gran utilidad para implementar un sistema de archivos NFS que permitirá el acceso compartido a ciertos recursos por parte de todos los equipos. Tal configuración se enmarca en el diseño de una metodología que contempla la implementación de un gestor de cola de tareas con capacidades de paralelización. Por lo tanto, el uso de un equipo de mayor capacidad de almacenamiento se presenta como una medida relevante para mejorar la eficiencia del sistema distribuido.
+
+\textbf{Configuración de NFS}
+
+En segundo lugar, se procedió a realizar la configuración de un sistema de archivos de red (NFS) en el equipo principal, con el fin de posteriormente  habilitar el acceso de los demás equipos a los archivos compartidos. Los detalles de esta configuración se encuentran descritos en el Anexo 1, \textit{Archivos compartidos - Network File System} del presente trabajo.
+
+\textbf{Instalación y configuración de los nodos regulares}
+
+En tercer lugar, se realizó la instalación de los equipos en la sala de cómputo Jürgen Tischer, esto incluye instalación de Rocky Linux 9, configuración de repositorios y manejadores de paquetes, configuración para el acceso de NFS. Se siguieron los procedimientos estándar para la instalación de equipos de cómputo descritos en el Anexo 1, Sección: \textit{Instalación y configuración inicial del sistema}, asegurándose de que los equipos estuvieran conectados correctamente y de que estuvieran configurados para funcionar en la red del departamento de matemáticas.
+
+\textbf{Instalación y configuración de herramientas de Wolfram}
+
+La cuarta etapa del proceso involucró la instalación del manejador de licencias de Mathematica MathLM, este se instaló en el nodo principal para proporcionar las licencias de Mathematica de una forma centralizada. Posteriormente se realizó la instalación y configuración de Mathematica y gridMathematica en los demás nodos del sistema distribuido. La instalación de MathLM, Mathematica y gridMathematica se describe en detalle en el Anexo 1, Sección: \textit{Mathematica, gridMathematica y MathLM.}
+
+\subsubsection{Instalación en Clúster Bochica}
+
+En el Clúster Bochica, como se puede visualizar en el cuadro \ref{table:table1} del capítulo 2.1 \textit{Recursos computacionales}, existen 2 tipos de servidores computacionales con distintas características y capacidades, 4 unidades de cada tipo de equipo, en este caso se tomaron todas las 8 unidades para hacer parte del sistema distribuido. También se escogió uno de los HP DL360E como nodo principal.
+
+\textbf{Configuración de Switch en el Clúster}
+
+El Clúster posee un Switch de Ethernet de alta velocidad que permite a los nodos conectarse entre sí, también con el resto de la red universitaria y a internet. Este switch había sido configurado con anterioridad para que solo unos nodos en particular pudiesen acceder a internet, por lo que se reconfiguró para que se pudieran conectar entre ellos y con internet, que es requerido para la instalación de paquetes de los repositorios. Los detalles se encuentran en el Anexo 1, Sección: \textit{Clúster / Configuración Switch}.
+
+\textbf{Instalación y configuración inicial del sistema}
+
+Posterior a la configuración del Switch, se procedió a la instalación y configuración del sistema operativo de los nodos del clúster. Aunque la instalación es muy similar a la de los computadores en la Sala Jürgen Tischer, se toma una base dintinta que no requiere interfaz gráfica y no se realiza la instalación de aplicaciones gráficas, en cambio se instalan otras librerías que son necesarias para su correcto funcionamiento. La instalación de los nodos del clúster se describe en detalle en el Anexo 1, Sección: \textit{Clúster / Instalación y configuración inicial del sistema.}
+
+\textbf{Configuración de NFS}
+
+Posterior a la instalación de los sistemas operativos de cada uno de los servidores, se procedió a configurar uno de los HP DL360E como nodo principal. Este equipo fue configurado para funcionar como nodo principal del Clúster Bochica, por lo que se configurará para que comparta la carpeta de /home con los demás nodos, esto se hace para que los trabajos de slurm, ejecutados desde Jupyterhub por los distintos usuarios, cada uno en su directorio personal, puedan acceder a los archivos desde todos los nodos desde los que sean ejecutados. Lo cual se describe en detalle en el Anexo 1, Sección: \textit{Clúster / Configuración de NFS.}
+
+\textbf{Configuración de conda y Jupyterhub con componentes adicionales}
+
+En la siguiente etapa, se realizó la instalación de Conda. Conda es un sistema de gestión de paquetes que se utiliza para instalar y administrar paquetes y dependencias de software principalmente relacionadas con Python. La instalación de conda se describe en detalle en el Anexo 1, Sección: \textit{Clúster / Instalación de Conda.}
+
+Mediante el uso de Conda se procedió a la configuración de 3 ambientes, Un ambiente completo con los paquetes de Anaconda, que representa una instalación de Python bastante completa a la que se le agregó mpi4py para el manejo del clúster y los paquetes necesarios para la ejecución de Jupyterhub, este ambiente es el principal del clúster. También se configuró un segundo ambiente con SageMath y un tercer ambiente con R. Los detalles de la instalación de estos ambientes y la demás configuración de Jupyterhub puede encontrarse en el Anexo 1, Sección: \textit{Configuración Jupyterhub}
+
+\textbf{Instalación y configuración de SLURM}
+
+Por último, se llevó a cabo la instalación y configuración de Slurm. Slurm es un sistema de gestión de trabajos que permite a múltiples usuarios lanzar un trabajo para que se ejecute cuando los recursos del sistema se encuentren disponibles. La instalación y configuración de Slurm se describe en detalle en el Anexo 1, Sección: \textit{Slurm}.
+
+Cabe recalcar que el Anexo 1 proporciona detalles completos sobre cada una de estas etapas, así como información adicional sobre la configuración y el funcionamiento del sistema distribuido tanto en la Sala Jürgen Tischer como en el Clúster Bochica. Además de destacar que la guía se elaboró cuidadosamente para garantizar que el sistema puediera ser fácilmente recreado a partir de recursos no necesariamente idénticos.
+
+\subsubsection{4.1.3 Comunicación del servicio funcionando}
+
+Finalmente se procedió a dar la comunicación al departamento de matemáticas sobre la implementación de las tecnologías y herramientas en la Sala de Cómputo Jürgen Tischer y el Clúster Bochica. Se les informó sobre las ventajas y beneficios que estas herramientas ofrecen para la realización de tareas de cómputo distribuido y se les brindó una guía de uso y acceso. También se realizó una charla abierta, principalmente dirigida a los profesores del departamento y estudiantes de posgrado que estuvieran interesados en el servicio.
 
   \subsection{4.2 Pruebas de control}
 
@@ -312,9 +347,9 @@
       
   \subsection{4.3 Pruebas de eficiencia}  \label{chap:4.3}
 
-  Se prepararon y realizaron dos pruebas para medir la eficiencia de los sistemas implementados.
+      Se llevaron a cabo dos pruebas para evaluar el rendimiento de los sistemas implementados. La primera prueba se realizó utilizando gridMathematica para resolver un sistema polinomial de ecuaciones y midió el rendimiento al variar el tamaño de un problema y la cantidad de nodos utilizados para resolverlo. La segunda prueba utilizó Slurm para resolver un sistema denso de ecuaciones lineales mientras variaba la cantidad de nodos utilizados para resolver dicho problema.   
 
-      \textbf{Prueba de gridMathematica}
+      \subsubsection{4.3.1 Prueba de gridMathematica}
 
       Para probar el rendimiento en singular, multi-proceso y multi-máquina utilizamos el código de uno de los proyectos que se beneficiaron con la implementación de esta tesis (ver Capítulo 5, Influencia en proyectos destacados, para más detalles).
 
@@ -322,78 +357,159 @@
 
       Preprint del proyecto mencionado y código de GitHub a utilizar. \cite{preprint} \cite{git}
 
-      En los resultados mostrados solo se considera el tiempo de ejecución del cálculo realizado, no se toma en cuenta el tiempo que tarda en conectar los nodos ni en preparar las variables.
-
       Para las pruebas utilizamos diferentes escenarios, un DELL PRECISION T3610 equipado con Intel Xeon E5-1620 v2 @ 3.9GHz (4 núcleos físicos, 8 hilos de ejecución), lo comparamos con un HP Z1 equipado con un Intel i9-10900 @ 5.2 GHz para ver la diferencia de velocidad al escalar verticalmente una máquina y luego con el mismo Intel Xeon pero con 10 de esos.
 
-      \textbf{Resultados Mathematica}
+      Las pruebas realizadas tenían como objetivo observar 3 puntos clave:
 
-      Procesadores utilizados : 
+      \begin{itemize}
+            \item Visualizar la diferencia en la ejecución del mismo problema al asignar la cantidad de núcleos físicos, en comparación con la asignación de la cantidad total de hilos de ejecución en una máquina.
+            \item Mostrar la variación de complejidad en el problema según se varía su tamaño.
+            \item Evidenciar la optimización de la ejecución al distribuir el problema en el sistema.
+      \end{itemize}
 
-      Xeon = Xeon E5-1620 v2 @ 3.9GHz 
+      \subsubsection{4.3.2 Resultados Mathematica}
 
-      i9 = Intel i9-10900 @ 5.2 GHz
+      \textbf{Nota:} En los resultados mostrados solo se considera el tiempo de ejecución del cálculo realizado, no se toma en cuenta el tiempo que tarda en conectar los nodos ni en preparar las variables. Es por eso que cabe resaltar que el tiempo de conexión de los nodos, en gridMathematica para 30 nodos, puede tardar más de 4 minutos.
+
+      En las gráficas los nombres Xeon e i9 hacen referencia a este tipo de equipos utilizados: 
+
+      \begin{itemize}
+            \item Xeon: DELL PRECISION T3610, Xeon E5-1620 v2 @ 3.9GHz 
+            \item i9: HP Z1, i9-10900 @ 5.2 GHz
+      \end{itemize}
+
+      Según los datos de la tabla 1 del anexo 2, podemos ver la gráfica \ref{fig:etiquetaa}. Se observa que asignar una cantidad alta de procesos a una tarea no necesariamente mejora el rendimiento. De hecho, si la cantidad de hilos supera la cantidad de núcleos físicos, esto puede empeorar el resultado. Por lo tanto, es importante considerar el número de núcleos físicos cuando se asignan procesos a una tarea para garantizar un rendimiento óptimo.
+
+      Así mismo, el uso de más procesos puede aumentar significativamente el consumo de memoria RAM, lo que a su vez puede afectar el rendimiento general del sistema. Es recomendable evaluar cuidadosamente el número de procesos que se asignan a una tarea y tomar medidas para optimizar el uso de la memoria RAM. Por ejemplo, se puede configurar la memoria virtual. Además, es importante tener en cuenta que, aunque el uso de múltiples procesos puede aumentar el rendimiento en algunos casos, también puede aumentar la complejidad del sistema y dificultar su mantenimiento y depuración.\newpage
 
       \begin{figure}[h]
             \centering
             \includegraphics[width=0.5\textwidth]{tab1.png}
-            \caption{Resultados Mathematica}
-            \label{fig:etiqueta}
+            \caption{Hilos de Ejecución vs Tiempo}
+            \label{fig:etiquetaa}
           \end{figure}
 
-      En la figura 10 del anexo 2 podemos observar
+          En la gráfica \ref{fig:etiquetab}, que se obtiene de los datos de la tabla 2 del anexo 2, se separan los datos según la configuración del sistema. Se utilizan 5 configuraciones en total, y se establece la configuración de referencia como 1 nodo Xeon.
 
-      n=500
+          La gráfica muestra que, al escalar verticalmente (es decir, al ejecutar el problema en un solo nodo más potente), el tiempo de ejecución puede reducirse drásticamente. Sin embargo, al escalar horizontalmente (es decir, añadiendo más nodos a la ejecución), se pueden obtener resultados que no son fácilmente alcanzables al escalar verticalmente. De hecho, al utilizar 30 nodos Xeon, se puede llegar a tener un tiempo casi 10 veces menor.
+          
+          Otra cosa que se puede evidenciar en la gráfica es que, según se aumenta el número de puntos, el problema escala con una tendencia lineal, como se esperaba en un principio. Además, la linealidad se mantiene constante a medida que se agregan más puntos, lo que sugiere que el problema no se vuelve más complejo a medida que se incrementa el número de puntos. En general, la gráfica proporciona una idea clara de cómo se comporta el problema a medida que se varía el número de puntos, lo que permite una mejor comprensión del mismo en términos de complejidad y escalabilidad. \newpage
 
       \begin{figure}[h]
             \centering
             \includegraphics[width=0.5\textwidth]{tab2.png}
-            \caption{Resultados Mathematica}
-            \label{fig:etiqueta}
-      \end{figure}
+            \caption{Tiempo de ejecución por configuración}
+            \label{fig:etiquetab}
+      \end{figure} 
 
-      En la siguiente gráfica se muestra la mejora porcentual en la eficiencia de generación de puntos por segundo.
+      La gráfica \ref{fig:etiquetac} muestra los datos de la tabla 3 del Anexo 2,
+      considerando solo \textit{n = 5000}Se midió el tiempo de ejecución con
+      diferentes configuraciones de Xeon, y se comparó la mejora temporal
+      obtenida al utilizar 10, 20 y 30 nodos, tomando el tiempo de 1 solo nodo
+      como tiempo de referencia.
+      
+      Los resultados obtenidos arrojaron información relevante sobre la
+      eficiencia de los diferentes nodos en relación con el tiempo de ejecución,
+      ya que se obtuvo una mejora en el rendimiento de aproximadamente el 98.9\%,
+      con respecto al valor de referencia, por cada nodo agregado. lo que
+      demuestra una estabilidad en la distribución del problema que utiliza el
+      software de gridMathematica, lo cual resulta importante en la
+      escalabilidad para este tipo de problemas a gran escala.
 
       \begin{figure}[h]
             \centering
             \includegraphics[width=0.5\textwidth]{tab3.png}
-            \caption{Resultados Mathematica}
-            \label{fig:etiqueta}
+            \caption{Factor de Optimización de Tiempo vs. Cantidad de Nodos (Xeon)}
+            \label{fig:etiquetac}
       \end{figure}
 
-\textbf{Slurm - The Linpack Benchmark para sistemas distribuidos}
+      En términos generales, es importante tener en cuenta que cuando se trata de problemas pequeños, puede ser más eficiente resolverlos en un solo nodo, ya que el tiempo de conexión entre nodos puede ser significativo. Sin embargo, cuando se trata de un problema a gran escala, la distribución se convierte en un factor clave para su resolución. En estos casos, el uso de software como gridMathematica puede ser de gran ayuda para distribuir el problema y obtener beneficios netos en la resolución. Además, es importante destacar que esta distribución no solo permite una resolución más rápida, sino que también puede permitir una mejor utilización de los recursos disponibles.
 
-El benchmark Linpack es una prueba de rendimiento computacional que mide la capacidad de cálculo y eficiencia de un sistema informático en términos de velocidad y procesamiento numérico. Fue diseñado por Jack Dongarra en los años 70 en el Laboratorio Nacional de Oak Ridge, y se ha convertido en un estándar en el campo de la supercomputación y el rendimiento de los sistemas informáticos. Esta prueba utiliza la resolución de un sistema complejo de ecuaciones lineales como criterio. \cite{linpack}, \cite{hpl-linpack}, \cite{faq-linpack}
+\subsubsection{4.3.3 Slurm - The Linpack Benchmark para sistemas distribuidos}
 
-Con esta prueba, es posible evaluar el rendimiento y la capacidad de procesamiento de diferentes configuraciones computacionales y compararlos. En este proyecto, se utilizó Slurm para ejecutar la prueba en sistemas distribuidos. Se realizaron pruebas en diferentes configuraciones de nodos y núcleos por nodo, lo que permitió medir la eficiencia y el rendimiento en distintos escenarios. Los resultados se registraron para una evaluación detallada.
+El benchmark Linpack es una prueba de rendimiento computacional que mide la capacidad de cálculo y eficiencia de un sistema informático en términos de velocidad y procesamiento numérico. Fue diseñado por Jack Dongarra en los años 70 en el Laboratorio Nacional de Oak Ridge, y se ha convertido en un estándar en el campo de la supercomputación y el rendimiento de los sistemas informáticos. \cite{linpack},  \cite{faq-linpack}
 
-Para configurar adecuadamente la prueba, se utilizó una herramienta web que sugiere una configuración según la cantidad de nodos, la cantidad de tareas por nodo y la cantidad de memoria. \cite{tune-hpl-dat-file}
+Para nuestra prueba utilizaremos HPL, una implementación portable del Linpack Benchmark para sistemas con memoria distribuida. HPL es un paquete de software que resuelve un sistema lineal (aleatorio) denso en aritmética de doble precisión (64 bits) en equipos con memoria distribuida.\cite{hpl-linpack}
 
-Durante la realización de esta investigación, se presentaron circunstancias imprevistas que afectaron el desarrollo de las pruebas de rendimiento en el entorno del clúster Bochica. Se detectaron problemas de mantenimiento en dicho entorno que comprometían su disponibilidad y estabilidad, poniendo en riesgo la precisión y confiabilidad de los resultados obtenidos.
+Con esta prueba, es posible evaluar el rendimiento y la capacidad de procesamiento de diferentes configuraciones computacionales y compararlos. En este proyecto, se utilizó Slurm para ejecutar la prueba en sistemas distribuidos. Se realizaron pruebas con diferentes cantidades de nodos, lo que permitió medir el rendimiento en distintos escenarios.
 
-En vista de esta situación, se tomó la decisión de replicar el entorno de slurm utilizando los 30 computadores Xeon E5-1620 v2 de la sala, mismos computadores de la prueba de Mathematica, en donde se procedió a ejecutar las pruebas de rendimiento. Aunque esta medida no estaba contemplada originalmente en el plan de investigación, se consideró como la mejor alternativa disponible para asegurar la integridad de las pruebas y la obtención de resultados fiables.
+Para configurar la prueba de manera adecuada, se utilizó una herramienta web que genera una recomendación de configuración según la cantidad de nodos, la cantidad de tareas por nodo y la cantidad de memoria.\cite{tune-hpl-dat-file}
+
+Con esta herramienta se configuró un archivo base que se cambiaría según la cantidad de nodos a utilizar. El archivo HPL.dat base que se tomó para las pruebas es tal que:
+
+\begin{lstlisting}[language=bash]
+      HPLinpack benchmark input file
+Innovative Computing Laboratory, University of Tennessee
+HPL.out      output file name (if any)
+6            device out (6=stdout,7=stderr,file)
+1            # of problems sizes (N)
+34176         Ns
+1            # of NBs
+192           NBs
+0            PMAP process mapping (0=Row-,1=Column-major)
+1            # of process grids (P x Q)
+1            Ps
+1            Qs
+16.0         threshold
+1            # of panel fact
+2            PFACTs (0=left, 1=Crout, 2=Right)
+1            # of recursive stopping criterium
+4            NBMINs (>= 1)
+1            # of panels in recursion
+2            NDIVs
+1            # of recursive panel fact.
+1            RFACTs (0=left, 1=Crout, 2=Right)
+1            # of broadcast
+1            BCASTs (0=1rg,1=1rM,2=2rg,3=2rM,4=Lng,5=LnM)
+1            # of lookahead depth
+1            DEPTHs (>=0)
+2            SWAP (0=bin-exch,1=long,2=mix)
+64           swapping threshold
+0            L1 in (0=transposed,1=no-transposed) form
+0            U  in (0=transposed,1=no-transposed) form
+1            Equilibration (0=no,1=yes)
+8            memory alignment in double (> 0)
+##### This line (no. 32) is ignored (it serves as a separator). ######
+0                               Number of additional problem sizes for PTRANS
+1200 10000 30000                values of N
+0                               number of additional blocking sizes for PTRANS
+40 9 8 13 13 20 16 32 64        values of NB
+
+\end{lstlisting}
+
+Para todas las pruebas, se mantuvo constante el tamaño del problema, representado por el valor de Ns, que en este caso fue de 34176. Para el valor de P y Q, que determinan cómo se distribuirá el problema, se realizaron dos variaciones. La primera, llamada P y Q recomendados, fue la recomendada por la herramienta web. La segunda, llamada Normal, tiene P igual al número de procesos por nodo y Q igual al número de nodos, es decir, en este caso, P es igual a 4, ya que utilizaremos la cantidad de procesos por nodo igual al número de núcleos físicos por nodo.
+
+\subsubsection{4.3.4 Resultados Slurm - The Linpack Benchmark para sistemas distribuidos}
+
+Durante la realización de esta tesis, se presentaron circunstancias imprevistas que afectaron el desarrollo de las pruebas de rendimiento en el entorno del clúster Bochica. Se detectaron problemas de mantenimiento en dicho entorno que comprometían su disponibilidad y estabilidad, poniendo en riesgo la precisión y confiabilidad de los resultados obtenidos.
+
+En vista de esta situación, se tomó la decisión de replicar el entorno de Slurm utilizando los computadores DELL PRECISION T3610 con Xeon E5-1620 v2 de la sala, mismos computadores de la prueba de Mathematica, en donde se procedió a ejecutar las pruebas de rendimiento. Aunque esta medida no estaba contemplada originalmente en el plan de investigación, se consideró como la mejor alternativa disponible para asegurar la integridad de las pruebas y la obtención de resultados fiables.
 
 Cabe destacar que se tomaron todas las medidas necesarias para garantizar que el entorno secundario contara con una configuración similar al entorno Bochica, asimismo se minimizaron las diferencias de entorno a fin de mantener la consistencia en las pruebas realizadas.
 
-\textbf{Resultados Slurm}
+Durante la ejecución de las pruebas, se identificó la existencia de un nodo con deficiencias en su capacidad de comunicación con el resto del sistema, lo cual resultaba en una disminución general en la velocidad de las pruebas. Ante la presencia de este nodo problemático, se llevó a cabo la ejecución de las pruebas tanto con la configuración estándar como con la configuración recomendada, asegurando la exclusión de dicho nodo en la participación. Con fines investigativos, se introdujo una nueva configuración estándar en la cual se garantizaba la presencia de este nodo problemático, permitiendo así comparar cómo su influencia afectaba los resultados obtenidos.
 
-\begin{figure}[h]
-      \centering
-      \includegraphics[width=0.5\textwidth]{a.png}
-      \caption{Resultados Slurm}
-      \label{fig:etiqueta}
+Los resultados de las pruebas se encuentran documentados en las tablas 4, 5 y 6 del Anexo 2. En las gráficas \ref{f:Gflops} y \ref{f:Tiempo}, se presenta una representación visual de los Gflops (mil millones de operaciones de punto flotante por segundo) y el tiempo requerido por cada prueba en relación a la cantidad de nodos utilizados, siguiendo las configuraciones previamente mencionadas.
+
+En líneas generales, estos datos ofrecen una perspectiva sobre la variación del rendimiento del sistema en relación con el número de nodos y tareas por nodo. En términos generales, se observa una mejora en el rendimiento a medida que se incrementa la cantidad de nodos y tareas, aunque esta mejora no es de naturaleza lineal debido a los desafíos asociados con la comunicación y la sobrecarga inherentes a la coordinación entre los nodos.
+
+\begin{figure}
+ \centering
+  \subfloat[Gflops vs Nodos]{
+   \label{f:Gflops}
+    \includegraphics[width=0.5\textwidth]{1.png}}
+  \subfloat[Tiempo vs Nodos]{
+   \label{f:Tiempo}
+    \includegraphics[width=0.5\textwidth]{2.png}}
+ \caption{Comportamientos de nodos}
+ \label{f:nodos}
 \end{figure}
 
-En el contexto del benchmark LINPACK, los datos obtenidos describen los resultados de ejecutar el benchmark en diferentes configuraciones de nodos y tareas por nodo.
+Sin embargo esta tendencia ascendente en el rendimiento a medida que se incrementa el número de nodos, alcanza un punto donde la adición de nodos adicionales no parece tener el efecto deseado, conduciendo a resultados generalmente inferiores. Es relevante destacar que estos resultados se mantienen consistentes a lo largo de múltiples iteraciones de las pruebas, lo que indica que la tendencia observada en la gráfica es persistente con ligeras variaciones para cada prueba en particular. Esta observación sugiere que, posiblemente debido al tamaño reducido del problema, incorporación de nodos adicionales introduce dificultades de comunicación en lugar de brindar un rendimiento mejorado de manera ilimitada. Esta circunstancia podría atribuirse a la distribución del problema entre los nodos involucrado, es decir, cuando la cantidad de nodos destinados a abordar el problema excede a los óptimos para la resolución de un problema, los resultados pueden mostrar una tendencia imprevista.
 
-\begin{itemize}
-      \item "Nodos": representa el número de nodos utilizados en la ejecución del benchmark.
-      \item "Tareas por nodo": indica el número de tareas (hilos de ejecución) asignadas a cada nodo.
-      \item "Tiempo": es el tiempo en segundos que tardó el sistema en ejecutar el benchmark LINPACK en la configuración dada.
-      \item "Gflops": representa el rendimiento medido en giga operaciones de punto flotante por segundo (GFLOPS) alcanzado durante la ejecución del benchmark.
-\end{itemize}
+Además, es pertinente resaltar otra observación de relevancia en relación al resultado que involucra un nodo con una conexión deficiente en la prueba. A pesar de haber utilizado una configuración normal, los resultados obtenidos son significativamente inferiores en comparación con la configuración estándar. En general, se concluye que los resultados podrían haber sido mejores si no se hubiera empleado dicho nodo en su totalidad.
 
-En general, estos datos proporcionan una idea de cómo el rendimiento del sistema varía con respecto al número de nodos y tareas por nodo. A medida que se agregan más nodos y tareas, en general, el rendimiento mejora, aunque no de manera lineal debido a la comunicación y la sobrecarga asociadas con la coordinación entre nodos.
+Por otro lado, la adopción de los valores recomendados de P y Q, si bien arrojó resultados apreciables, no siempre resultó ser la opción más favorable. Por lo tanto, no es posible concluir de manera definitiva cuál de las dos configuraciones es más efectiva. No obstante, se observa que la configuración denominada como "normal" exhibe una mayor estabilidad en términos generales.
 
   \subsection{4.4 Automatización - Facilitar el uso}   \label{chap:4.4}
 
