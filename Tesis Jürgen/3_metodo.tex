@@ -14,27 +14,27 @@
     \centering
     \begin{tabular}{p{7cm}|p{7cm}}
       \hline
-      \textbf{Objetivos Específicos}                                 & \textbf{Producto(s) Esperados} \\
+      \textbf{Objetivos Específicos}                                 & \textbf{Resultado(s) Esperados}                                          \\
       \hline
       Identificar recursos disponibles y necesidades investigativas. &
       Documento expresando la arquitectura de los recursos y las necesidades a
-      considerar.                                                                                     \\
+      considerar. (Este objetivo se desarrolla durante el capítulo \nameref{chap:recursos-necesidades})                                         \\
       \hline
       Diseñar una solución que considere los requerimientos de los usuarios y
       aproveche las capacidades de los recursos computacionales mediante la
       implementación de un gestor de cola de tareas.                 & Documentación, scripts,
-      programas y pruebas básicas de operación que simplifiquen o automaticen el
-      mantenimiento y administración del gestor de cola de tareas.                                    \\
+      programas y/o pruebas básicas de operación que simplifiquen o automaticen el
+      mantenimiento y administración del gestor de cola de tareas.       (Este objetivo se desarrolla durante el capítulo \nameref{chap:3.2})   \\
       \hline
       Llevar a cabo la instalación, documentación y puesta a punto de
       herramientas que apoyen los procesos de investigación y docencia en el área de
       matemáticas, facilitando el uso del servicio.                  & Documentación, scripts y
       programas que automaticen y faciliten la utilización del servicio para los
-      estudiantes o profesores.                                                                       \\
+      estudiantes o profesores. (Este objetivo se desarrolla durante el capítulo \nameref{chap:4.3})                                            \\
       \hline
       Llevar a cabo pruebas de uso de la infraestructura y de las
       aplicaciones desplegadas en este trabajo.                      & Reporte de pruebas en donde se
-      evidencie la correcta funcionalidad y la eficiencia de los                                      \\
+      evidencie la correcta funcionalidad y la eficiencia de los recursos. (Este objetivo se desarrolla durante el capítulo \nameref{chap:4.4}) \\
       \hline
     \end{tabular}
     \caption{Resultados Esperados}
@@ -270,15 +270,15 @@
 
   \textbf{SLURM}
 
-  Como se ha mencionado anteriormente SLURM (acrónimo de Simple Linux Utility for Resource Management) es un sistema de gestión de recursos utilizado en entornos de computación de alto rendimiento (HPC). 
-  
+  Como se ha mencionado anteriormente SLURM (acrónimo de Simple Linux Utility for Resource Management) es un sistema de gestión de recursos utilizado en entornos de computación de alto rendimiento (HPC).
+
   \begin{figure}[h]
-      \centering
-      \includegraphics[width=0.8\textwidth]{slurm.png}
-      \caption{Configuración SLURM}
-      \label{fig:etiqueta}
-    \end{figure}
-  
+    \centering
+    \includegraphics[width=0.8\textwidth]{slurm.png}
+    \caption{Configuración SLURM \cite{fig4}}
+    \label{fig:etiqueta}
+  \end{figure}
+
   Algunas de las razones por las que se escoge Slurm para la gestión de recursos son:\cite{RHEL-SLURM-1}
 
 
@@ -312,21 +312,18 @@
 
   En el marco de este proyecto, se ha contemplado la utilización de JupyterHub como plataforma de acceso a los recursos computacionales, lo que permitirá a los usuarios disfrutar de una interfaz sencilla, centralizada y automatizada.
 
- JupyterHub es una plataforma sumamente versátil que se presta de manera excepcional para la gestión y ejecución simultánea de diversas instancias de Jupyter Notebook. Esta herramienta, por tanto, representa una alternativa idónea para contextos educativos o de investigación en los que varios usuarios necesitan emplear Jupyter Notebook de forma paralela.
+  JupyterHub es una plataforma sumamente versátil que se presta de manera excepcional para la gestión y ejecución simultánea de diversas instancias de Jupyter Notebook. Esta herramienta, por tanto, representa una alternativa idónea para contextos educativos o de investigación en los que varios usuarios necesitan emplear Jupyter Notebook de forma paralela.
 
   \begin{figure}[h]
-      \centering
-      \includegraphics[width=0.7\textwidth]{hub.jpeg}
-      \caption{Configuración JupyterHub}
-      \label{fig:etiqueta}
-    \end{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{hub.jpeg}
+    \caption{Arquitectura JupyterHub \cite{fig5}}
+    \label{fig:etiqueta}
+  \end{figure}
 
-    Al ejecutarse a través de un servidor central, el software de JupyterHub permite a los usuarios iniciar y detener sus sesiones de Jupyter Notebook de manera independiente. De esta manera, cada usuario dispone de su propio espacio de trabajo seguro y aislado en el que puede generar, llevar a cabo y compartir sus cuadernos de Jupyter, al tiempo que ofrece a los administradores de sistema un control riguroso del acceso y la seguridad de las múltiples instancias que se ejecutan.
+  Al ejecutarse a través de un servidor central, el software de JupyterHub permite a los usuarios iniciar y detener sus sesiones de Jupyter Notebook de manera independiente. De esta manera, cada usuario dispone de su propio espacio de trabajo seguro y aislado en el que puede generar, llevar a cabo y compartir sus cuadernos de Jupyter, al tiempo que ofrece a los administradores de sistema un control riguroso del acceso y la seguridad de las múltiples instancias que se ejecutan.
 
-    Con Slurm y JupyterHub, los usuarios del clúster podrán aprovechar al máximo los recursos disponibles y trabajar de manera más eficiente y colaborativa.
-
-  \mylinespacing
-  \mylinespacing
+  Con Slurm y JupyterHub, los usuarios del clúster podrán aprovechar al máximo los recursos disponibles y trabajar de manera más eficiente y colaborativa.
   \begin{tightcenter}
   \end{tightcenter}
 \end{spacing}

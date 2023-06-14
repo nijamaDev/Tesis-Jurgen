@@ -10,7 +10,9 @@
 
   \subsubsection{4.1.1 Instalación en Sala de Cómputo Jürgen Tischer}
 
-  En la sala de cómputo, como se puede visualizar en el cuaddro \ref{table:table1} del \textit{capítulo 2.1 Recursos computacionales}, existen diversos equipos de cómputo con características y capacidades variadas, por lo que algunos equipos no fueron seleccionados para formar parte del sistema distribuido debido al bajo rendimiento que pueden proveer, el cual, causaría un efecto de cuello de botella como se podrá observar más adelante en el \textit{capítulo 4.3 Pruebas de eficiencia y rendimiento}, por lo que, aunque el sistema operativo, los paquetes base y aplicaciones fueron instalados por igual en todos los equipos, solo se configuraron para trabajar en paralelos los 30 DELL PRECISION T3610 junto con los HP Z1 y Z2 para un total de 33 equipos en el sistema distribuido.
+  En la sala de cómputo, como se puede visualizar en el cuadro \ref{table:table1} del \textit{capítulo 2.1 Recursos computacionales}, existen diversos equipos de cómputo con características y capacidades variadas. Por consiguiente, algunos de estos equipos fueron excluidos de formar parte del sistema distribuido debido a su limitado rendimiento, que, de implementarse, podría ocasionar un efecto adverso conocido como ``\textit{cuello de botella}''.
+
+  Esta problemática específica se analizará detalladamente en el \textit{capítulo 4.3 Pruebas de eficiencia y rendimiento}. A fin de evitar tal contratiempo, se ha procedido a configurar únicamente los 30 equipos DELL PRECISION T3610, junto con los modelos HP Z1 y Z2, para operar en paralelo, generando así un conjunto de 33 unidades en el sistema distribuido. Cabe mencionar que el sistema operativo, así como los paquetes de software base y las aplicaciones, han sido instalados de forma uniforme en todos los dispositivos mencionados.
 
   \textbf{Configuración nodo principal}
 
@@ -107,7 +109,7 @@
     tabsize=2,
     rulecolor=\color{codebackground}
   }
-  \begin{lstlisting}[language=C]
+  \begin{lstlisting}[language=Bash]
       $ xeon "hostname"
       C4: C4
       E3: E3
@@ -116,7 +118,7 @@
       B5: B5
   \end{lstlisting}
 
-  \subsubsection {4.2.2 Comprobar funcionamiento en Mathematica}
+  \subsubsection{4.2.2 Comprobar funcionamiento en Mathematica}
 
   En Mathematica es fácil comprobar que la configuración paralela funciona
   correctamente. Para hacerlo, seleccione una configuración sencilla que
