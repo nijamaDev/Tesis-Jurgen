@@ -5,7 +5,7 @@
   \end{tightcenter}
 
   \subsection{4.1 Implementando tecnologías}
-
+  \label{chap:4.1}
   En esta sección se explica cómo se implementó la solución propuesta. Para hacerlo fácil de reinstalar, reconfigurar y estandarizar los sistemas, así como para instalar nuevos equipos que se adquieran después de que finalice este proyecto, se creó un manual de configuración que se incluye como Anexo 1 de este documento: \textit{Instalación y configuración de los recursos informáticos de la sala de cómputo Jürgen Tischer y Clúster Bochica del Departamento de Matemáticas de la Universidad del Valle}. La implementación de las tecnologías se llevó a cabo en varias etapas, las cuales se describen en detalle en dicho anexo. Por lo tanto, se hará referencia a este múltiples veces durante la presente sección. A continuación, se presenta una descripción general de cada etapa del proceso y en qué sección del anexo 1 se puede encontrar más información.
 
   \subsubsection{4.1.1 Instalación en Sala de Cómputo Jürgen Tischer}
@@ -65,7 +65,7 @@
   Finalmente se procedió a dar la comunicación al departamento de matemáticas sobre la implementación de las tecnologías y herramientas en la Sala de Cómputo Jürgen Tischer y el Clúster Bochica. Se les informó sobre las ventajas y beneficios que estas herramientas ofrecen para la realización de tareas de cómputo distribuido y se les brindó una guía de uso y acceso. También se realizó una charla abierta, principalmente dirigida a los profesores del departamento y estudiantes de posgrado que estuvieran interesados en el servicio.
 
   \subsection{4.2 Pruebas de control}
-
+  \label{chap:4.2}
   En el proceso de verificar el correcto funcionamiento de los computadores y las integraciones, se emplean diversas herramientas, como las presentadas a continuación.
 
   \subsubsection {4.2.1 Comprobar conectividad básica con pdsh}
@@ -81,7 +81,7 @@
   argumento \code{uptime} en vez de \code{hostname}, se puede obtener más
   información sobre el estado de cada nodo.
 
-  El resultado se ve de esta forma :
+  El resultado se ve de esta forma:
 
   \definecolor{codebackground}{RGB}{240,240,240}
   % Color de fondo del código
@@ -276,7 +276,7 @@
   adjunta en el apartado NFS.
 
   Para ejecutar el código, se debe utilizar el comando \code{srun -N10
-    /nfs/c-mpi-hello}.Esto asignará 10 nodos, cada uno con un hilo de proceso. El resultado tiene el siguiente formato :
+    /nfs/c-mpi-hello}.Esto asignará 10 nodos, cada uno con un hilo de proceso. El resultado tiene el siguiente formato:
 
   \begin{lstlisting}[language=C]
       $ srun -N4 c-mpi-hello
